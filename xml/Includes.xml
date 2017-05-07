@@ -847,7 +847,7 @@
 					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 				</control>
 				<control type="grouplist">
-					<left>35</left>
+					<left>150</left>
 					<description>Left side of top bar</description>
 					<width>900</width>
 					<top>-7</top>
@@ -890,18 +890,31 @@
 					</control>
 				</control>
 				<control type="button">
-					<top>0</top>
-					<width>200</width>
-					<height>100</height>
+					<left>0</left>
+					<top>10</top>
+					<width>40</width>
+					<height>40</height>
 					<label></label>
 					<onclick>Action(Back)</onclick>
-					<texturefocus />
-					<texturenofocus />
+					<texturefocus colordiffuse="button_focus">icons/sysmenu/back.png</texturefocus>
+					<texturenofocus colordiffuse="white">icons/sysmenu/back.png</texturenofocus>
+					<visible>!Window.IsActive(Home.xml)</visible>
+				</control>
+				<control type="button">
+					<left>60</left>
+					<top>10</top>
+					<width>40</width>
+					<height>40</height>
+					<label></label>
+					<onclick>ActivateWindow(home)</onclick>
+					<texturefocus colordiffuse="button_focus">icons/sysmenu/home.png</texturefocus>
+					<texturenofocus colordiffuse="white">icons/sysmenu/home.png</texturenofocus>
+					<visible>!Window.IsActive(Home.xml)</visible>
 				</control>
 				<control type="label" id="18900">
 					<top>50</top>
 					<label>$PARAM[sublabel]</label>
-					<left>35</left>
+					<left>150</left>
 					<shadowcolor>text_shadow</shadowcolor>
 					<height>100</height>
 					<width>900</width>
@@ -912,7 +925,7 @@
 					<top>0</top>
 					<align>right</align>
 					<right>20</right>
-					<height>200</height>
+					<height>100</height>
 					<orientation>horizontal</orientation>
 					<width>900</width>
 					<itemgap>10</itemgap>
@@ -961,11 +974,39 @@
 					<control type="label">
 						<font>font_clock</font>
 						<shadowcolor>text_shadow</shadowcolor>
-						<height>200</height>
+						<height>80</height>
 						<width>auto</width>
 						<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 						<label>$INFO[System.Time]</label>
 					</control>
+					<control type="button">
+						<top>10</top>
+						<width>40</width>
+						<height>40</height>
+						<label></label>
+						<onclick>Minimize</onclick>
+						<texturefocus colordiffuse="button_focus">icons/sysmenu/minimize.png</texturefocus>
+						<texturenofocus colordiffuse="white">icons/sysmenu/minimize.png</texturenofocus>
+					</control>
+					<control type="button">
+						<top>10</top>
+						<width>40</width>
+						<height>40</height>
+						<label></label>
+						<onclick>ToggleFullscreen</onclick>
+						<texturefocus colordiffuse="button_focus">icons/sysmenu/window.png</texturefocus>
+						<texturenofocus colordiffuse="white">icons/sysmenu/window.png</texturenofocus>
+					</control>
+					<control type="button">
+						<top>10</top>
+						<width>40</width>
+						<height>40</height>
+						<label></label>
+						<onclick>Quit</onclick>
+						<texturefocus colordiffuse="button_focus">icons/sysmenu/close.png</texturefocus>
+						<texturenofocus colordiffuse="white">icons/sysmenu/close.png</texturenofocus>
+					</control>
+					
 				</control>
 				<control type="grouplist">
 					<right>10</right>

@@ -56,7 +56,7 @@
 					<shadowcolor>text_shadow</shadowcolor>
 					<top>0</top>
 					<right>20</right>
-					<height>200</height>
+					<height>100</height>
 					<width>600</width>
 					<align>right</align>
 					<label>$INFO[System.Time]</label>
