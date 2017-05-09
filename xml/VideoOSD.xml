@@ -3,7 +3,7 @@
 	<onload>Dialog.Close(fullscreeninfo)</onload>
 	<onload condition="VideoPlayer.Content(LiveTV) + !Player.PauseEnabled">SetFocus(603)</onload>
 	<depth>DepthOSD</depth>
-	<defaultcontrol always="true">602</defaultcontrol>
+	<!-- <defaultcontrol always="true">602</defaultcontrol> -->
 	<include>Animation_BottomSlide</include>
 	<controls>
 		<control type="button">
@@ -44,7 +44,13 @@
 					<onup>87</onup>
 					<ondown>noop</ondown>
 					<onleft>70043</onleft>
-					<onright>70011</onright>
+					<onright>881</onright>
+					<control type="radiobutton" id="641">
+						<include content="OSDButton">
+							<param name="texture" value="osd/fullscreen/buttons/rewind.png"/>
+						</include>
+						<onclick>PlayerControl(Rewind)</onclick>
+					</control>
 					<control type="radiobutton" id="600">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/previous.png"/>
@@ -71,18 +77,24 @@
 						<onclick>PlayerControl(Play)</onclick>
 						<visible>Player.PauseEnabled</visible>
 					</control>
-					<control type="radiobutton" id="603">
-						<include content="OSDButton">
-							<param name="texture" value="osd/fullscreen/buttons/stop.png"/>
-						</include>
-						<onclick>PlayerControl(Stop)</onclick>
-					</control>
 					<control type="radiobutton" id="605">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/next.png"/>
 						</include>
 						<onclick condition="!VideoPlayer.Content(livetv)">PlayerControl(Next)</onclick>
 						<onclick condition="VideoPlayer.Content(livetv)">PlayerControl(SmallSkipForward)</onclick>
+					</control>
+					<control type="radiobutton" id="642">
+						<include content="OSDButton">
+							<param name="texture" value="osd/fullscreen/buttons/fastfwd.png"/>
+						</include>
+						<onclick>PlayerControl(Forward)</onclick>
+					</control>
+					<control type="radiobutton" id="603">
+						<include content="OSDButton">
+							<param name="texture" value="osd/fullscreen/buttons/stop.png"/>
+						</include>
+						<onclick>PlayerControl(Stop)</onclick>
 					</control>
 					<control type="radiobutton" id="804">
 						<include content="OSDButton">
@@ -126,7 +138,7 @@
 					<ondown condition="Control.HasFocus(704)">12104</ondown>
 					<ondown condition="Control.HasFocus(255)">13103</ondown>
 					<onleft>606</onleft>
-					<onright>600</onright>
+					<onright>641</onright>
 					<control type="radiobutton" id="881">
 						<include content="OSDButton">
 							<param name="texture" value="dialogs/volume/volume.png"/>
@@ -244,9 +256,9 @@
 					<left>0</left>
 					<width>100%</width>
 					<height>25</height>
-					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-					<textureslidernib>osd/progress/nub_leftright.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernibfocus>
+					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
+					<textureslidernib>buttons/slider-nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
 					<info>Player.Progress</info>
 					<action>seek</action>
 					<visible>!Control.HasFocus(87)</visible>
@@ -256,14 +268,67 @@
 					<left>0</left>
 					<width>100%</width>
 					<height>25</height>
-					<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-					<textureslidernib colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernibfocus>
+					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
+					<textureslidernib colordiffuse="button_focus">buttons/slider-nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
 					<info>Player.Progress</info>
 					<action>seek</action>
 					<visible>Control.HasFocus(87)</visible>
 				</control>
 			</control>
+
+
+
+		<!--  Enable this, or something like it, when we have a PVR B/E that reports this properly
+			<control type="group" id="6001">
+				<top>-5</top>
+				<visible>PVR.IsTimeShift + !Player.ChannelPreviewActive</visible>
+				<animation effect="fade" time="300">VisibleChange</animation>
+				<control type="label">
+					<top>0</top>
+					<right>20</right>
+					<width>400</width>
+					<height>50</height>
+					<align>right</align>
+					<aligny>center</aligny>
+					<font>font30</font>
+					<label>$INFO[PVR.TimeShiftEnd]</label>
+				</control>
+				<control type="label">
+					<top>0</top>
+					<left>20</left>
+					<width>400</width>
+					<height>50</height>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>font30</font>
+					<label>$INFO[PVR.TimeShiftStart]</label>
+				</control>
+				<control type="label">
+					<top>0</top>
+					<left>20</left>
+					<right>20</right>
+					<height>50</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>font30</font>
+					<label>[B]$LOCALIZE[31026][/B] $INFO[PVR.timeshiftcur]</label>
+				</control>
+				<control type="progress">
+					<left>0</left>
+					<top>50</top>
+					<width>100%</width>
+					<height>15</height>
+					<info>PVR.TimeshiftProgress</info>
+					<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
+					<midtexture>colors/white50.png</midtexture>
+				</control>
+			</control>
+		-->
+
+
+
+
 		</control>
 	</controls>
 </window>
