@@ -1167,6 +1167,7 @@
 					<height>115</height>
 					<texture flipy="true">frame/InfoBar.png</texture>
 				</control>
+			<!--
 				<control type="group">
 					<visible>$PARAM[info_visible]</visible>
 					<visible>!System.HasModalDialog</visible>
@@ -1209,6 +1210,7 @@
 						<texturenofocus />
 					</control>
 				</control>
+			-->
 				<include>TouchButtons</include>
 			</control>
 		</definition>

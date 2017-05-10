@@ -365,7 +365,7 @@
 			<label></label>
 			<height>100%</height>
 			<width>50</width>
-			<left>-50</left>
+			<left>-60</left>   <!-- completely off screen -->
 			<top>0</top>
 			<texturefocus />
 			<texturenofocus />
