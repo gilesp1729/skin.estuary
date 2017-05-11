@@ -42,6 +42,15 @@
 					<effect type="slide" end="0,-20" time="60" tween="sine" />
 					<effect type="slide" end="0,20" time="180" tween="sine" delay="80" />
 				</animation>
+				<control type="scrollbar" id="60">  <!-- needed by WidgetGroupListCommon -->
+					<right>0</right>
+					<top>50</top>
+					<width>12</width>
+					<bottom>100%</bottom>
+					<orientation>vertical</orientation>
+					<texturesliderbackground colordiffuse="22FFFFFF">colors/white.png</texturesliderbackground>
+					<animation effect="fade" start="100" end="40" time="0" condition="!system.getbool(input.enablemouse)">Conditional</animation>
+				</control>
 				<include>OpenClose_Right</include>
 				<control type="group" id="5000">
 					<visible>String.IsEqual(Container(9000).ListItem.Property(id),movies)</visible>

@@ -3,11 +3,13 @@
 	<include name="WidgetGroupListCommon">
 		<orientation>vertical</orientation>
 		<height>100%</height>
+		<right>15</right>
 		<scrolltime tween="cubic" easing="out">500</scrolltime>
 		<itemgap>-160</itemgap>
 		<onup>20000</onup>
 		<ondown>20001</ondown>
 		<usecontrolcoords>true</usecontrolcoords>
+		<pagecontrol>60</pagecontrol>
 	</include>
 	<include name="CategoryLabel">
 		<param name="visible">true</param>
@@ -437,15 +439,15 @@
 	</include>
 	<include name="PVRSubMenuContent">
 		<content>
+			<item>   <!-- Make guide come up first -->
+				<label>$LOCALIZE[19069]</label>
+				<onclick>ActivateWindow($PARAM[pvr_type]Guide)</onclick>
+				<thumb>icons/pvr/epg.png</thumb>
+			</item>
 			<item>
 				<label>$LOCALIZE[19019]</label>
 				<onclick>ActivateWindow($PARAM[pvr_type]Channels)</onclick>
 				<thumb>DefaultAddonPeripheral.png</thumb>
-			</item>
-			<item>
-				<label>$LOCALIZE[19069]</label>
-				<onclick>ActivateWindow($PARAM[pvr_type]Guide)</onclick>
-				<thumb>icons/pvr/epg.png</thumb>
 			</item>
 			<item>
 				<label>$LOCALIZE[19017]</label>
