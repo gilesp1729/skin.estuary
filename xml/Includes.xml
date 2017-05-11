@@ -898,7 +898,7 @@
 					<onclick>Action(Back)</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/back.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/back.png</texturenofocus>
-					<visible>!Window.IsActive(Home.xml)</visible>
+					<visible>!Player.HasMedia + !Window.IsActive(Home.xml)</visible>
 				</control>
 				<control type="button">
 					<left>60</left>
@@ -909,7 +909,7 @@
 					<onclick>ActivateWindow(home)</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/home.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/home.png</texturenofocus>
-					<visible>!Window.IsActive(Home.xml)</visible>
+					<visible>!Player.HasMedia + !Window.IsActive(Home.xml)</visible>
 				</control>
 				<control type="label" id="18900">
 					<top>50</top>

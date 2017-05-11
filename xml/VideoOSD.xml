@@ -178,6 +178,7 @@
 						<onclick>Action(Close)</onclick>
 						<onclick>ActivateWindow(fullscreeninfo)</onclick>
 					</control>
+				<!--
 					<control type="radiobutton" id="70040">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/channels.png"/>
@@ -186,12 +187,13 @@
 						<onclick>ActivateWindow(PVROSDChannels)</onclick>
 						<visible>VideoPlayer.Content(livetv)</visible>
 					</control>
+				-->
 					<control type="radiobutton" id="70041">
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/guide.png"/>
 						</include>
 						<onclick>Dialog.Close(VideoOSD)</onclick>
-						<onclick>ActivateWindow(PVROSDGuide)</onclick>
+						<onclick>ActivateWindow(TVGuide)</onclick>
 						<visible>VideoPlayer.Content(livetv)</visible>
 					</control>
 					<control type="radiobutton" id="700">

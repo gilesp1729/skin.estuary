@@ -439,7 +439,7 @@
 	</include>
 	<include name="PVRSubMenuContent">
 		<content>
-			<item>   <!-- Make guide come up first -->
+			<item>
 				<label>$LOCALIZE[19069]</label>
 				<onclick>ActivateWindow($PARAM[pvr_type]Guide)</onclick>
 				<thumb>icons/pvr/epg.png</thumb>
