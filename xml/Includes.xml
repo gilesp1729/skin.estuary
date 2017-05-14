@@ -923,6 +923,7 @@
 					<texturenofocus colordiffuse="FFCCCCCC">frame/menu-nofo.png</texturenofocus>
 					<animation effect="fade" time="200">VisibleChange</animation>
 					<onclick>SetProperty(MediaMenu,True,Home)</onclick>
+					<onclick>SetFocus(9000)</onclick>
 					<visible>!Window.IsActive(Home.xml)</visible>
 				</control>
 				<control type="label" id="18900">
