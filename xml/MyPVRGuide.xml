@@ -35,6 +35,7 @@
 						<timeblocks>34</timeblocks>
 						<rulerunit>6</rulerunit>
 						<onleft>9000</onleft>
+						<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 						<onright>60</onright>
 						<onup>10</onup>
 						<ondown>10</ondown>

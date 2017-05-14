@@ -19,6 +19,7 @@
 					<onup>50</onup>
 					<ondown>50</ondown>
 					<onleft>9000</onleft>
+					<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 					<onright>73</onright>
 					<movement>3</movement>
 					<focusposition>4</focusposition>

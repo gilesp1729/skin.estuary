@@ -16,6 +16,7 @@
 				<movement>5</movement>
 				<focusposition>6</focusposition>
 				<onleft>9000</onleft>
+				<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 				<onright>531</onright>
 				<onup>55</onup>
 				<ondown>55</ondown>

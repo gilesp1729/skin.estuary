@@ -372,6 +372,7 @@
 				<right>15</right>
 				<height>100%</height>
 				<onleft>9000</onleft>
+				<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 				<onright>531</onright>
 				<onup condition="Integer.IsGreater(Container.NumPages,1)">54</onup>
 				<onup condition="!Integer.IsGreater(Container.NumPages,1)">9000</onup>

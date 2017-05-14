@@ -22,6 +22,7 @@
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>vertical</orientation>
 					<onleft>9000</onleft>
+					<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 					<onright>60</onright>
 					<onup>50</onup>
 					<ondown>50</ondown>
@@ -165,6 +166,7 @@
 					<scrolltime tween="cubic" easing="out">500</scrolltime>
 					<orientation>vertical</orientation>
 					<onleft>9000</onleft>
+					<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 					<onright>60</onright>
 					<onup>51</onup>
 					<ondown>51</ondown>

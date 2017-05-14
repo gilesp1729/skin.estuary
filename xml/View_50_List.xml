@@ -64,6 +64,7 @@
 			<orientation>vertical</orientation>
 			<pagecontrol>$PARAM[list_id]600</pagecontrol>
 			<onleft>9000</onleft>
+			<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 			<onright>$PARAM[list_id]600</onright>
 			<onup>$PARAM[list_id]</onup>
 			<ondown>$PARAM[list_id]</ondown>

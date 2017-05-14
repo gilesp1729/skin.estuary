@@ -69,6 +69,7 @@
 				<width>940</width>
 				<height>700</height>
 				<onleft>9000</onleft>
+				<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 				<onright>60</onright>
 				<onup>450</onup>
 				<ondown>450</ondown>
@@ -127,6 +128,7 @@
 				<width>940</width>
 				<height>700</height>
 				<onleft>9000</onleft>
+				<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 				<onright>60</onright>
 				<onup>451</onup>
 				<ondown>451</ondown>

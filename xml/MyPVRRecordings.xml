@@ -18,6 +18,7 @@
 					<right>778</right>
 					<bottom>list_y_offset</bottom>
 					<onleft>9000</onleft>
+					<onleft>SetProperty(MediaMenu,True,Home)</onleft>
 					<onright>73</onright>
 					<onup>50</onup>
 					<ondown>50</ondown>
