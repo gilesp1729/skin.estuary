@@ -53,6 +53,7 @@
 				<height>100%</height>
 				<onleft>9000</onleft>
 				<onup>9000</onup>
+				<onright>ClearProperty(MediaMenu,Home)</onright>
 				<onright condition="!Window.IsActive(MyPVRGuide.xml)">50</onright>
 				<onright condition="Window.IsActive(MyPVRGuide.xml)">10</onright>
 				<ondown>14100</ondown>
@@ -84,6 +85,7 @@
 						<left>0</left>
 						<height>120</height>
 						<onleft>6056</onleft>
+						<onright>ClearProperty(MediaMenu,Home)</onright>
 						<onright condition="!Window.IsActive(MyPVRGuide.xml)">50</onright>
 						<onright condition="Window.IsActive(MyPVRGuide.xml)">10</onright>
 						<onup>14100</onup>
@@ -330,6 +332,7 @@
 			<onleft>9000</onleft>
 			<onup>9000</onup>
 			<onright>50</onright>
+			<onright>ClearProperty(MediaMenu,Home)</onright>
 			<ondown>9000</ondown>
 			<onback>50</onback>
 			<control type="label" id="200">
