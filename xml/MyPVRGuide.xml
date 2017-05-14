@@ -4,6 +4,8 @@
 	<backgroundcolor>background</backgroundcolor>
 	<views>10</views>
 	<menucontrol>9000</menucontrol>
+	<onload>ClearProperty(MediaMenu,Home)</onload>
+	<onunload>ClearProperty(MediaMenu,Home)</onunload>
 	<controls>
 		<include>DefaultBackground</include>
 		<control type="group" id="50">

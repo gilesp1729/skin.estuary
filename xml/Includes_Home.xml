@@ -157,7 +157,7 @@
 							<label>$PARAM[button2_label]</label>
 							<textoffsetx>40</textoffsetx>
 							<onclick>$PARAM[button2_onclick]</onclick>
-							<onclick>SetFocus(9000)</onclick>
+							<onclick>SetProperty(MediaMenu,True,Home)</onclick>
 							<align>center</align>
 							<texturefocus border="23" colordiffuse="button_focus">buttons/dialogbutton-fo.png</texturefocus>
 							<texturenofocus border="40">buttons/dialogbutton-nofo.png</texturenofocus>

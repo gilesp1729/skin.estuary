@@ -2,6 +2,8 @@
 <window>
 	<defaultcontrol always="true">450</defaultcontrol>
 	<include>Animation_DialogPopupOpenClose</include>
+	<onload>ClearProperty(MediaMenu,Home)</onload>
+	<onunload>ClearProperty(MediaMenu,Home)</onunload>
 	<controls>
 		<control type="group">
 			<centerleft>50%</centerleft>

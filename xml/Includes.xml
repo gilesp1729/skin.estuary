@@ -34,7 +34,10 @@
 	<constant name="list_y_offset">0</constant>
 	<constant name="list_item_height">80</constant>
 	<expression name="infodialog_active">Window.IsActive(musicinformation) | Window.IsActive(songinformation) | Window.IsActive(movieinformation) | Window.IsActive(addoninformation) | Window.IsActive(pvrguideinfo) | Window.IsActive(pvrrecordinginfo) | Window.IsActive(pictureinfo) | Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml) | Window.IsVisible(script-script.extendedinfo-DialogInfo.xml) | Window.IsVisible(script-script.extendedinfo-VideoList.xml)</expression>
-	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | Window.IsActive(MyPlaylist.xml)</expression>
+	<!--
+	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | !String.IsEmpty(Window(Home).Property(MediaMenu)) | Window.IsActive(MyPlaylist.xml)</expression>
+	-->
+	<expression name="sidebar_visible">!String.IsEmpty(Window(Home).Property(MediaMenu)) | Window.IsActive(MyPlaylist.xml)</expression>
 	<include name="CommonScrollbars">
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
@@ -847,7 +850,7 @@
 					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 				</control>
 				<control type="grouplist">
-					<left>150</left>
+					<left>180</left>
 					<description>Left side of top bar</description>
 					<width>900</width>
 					<top>-7</top>
@@ -911,10 +914,21 @@
 					<texturenofocus colordiffuse="white">icons/sysmenu/home.png</texturenofocus>
 					<visible>!Player.HasMedia + !Window.IsActive(Home.xml)</visible>
 				</control>
+				<control type="button" id="6160">
+					<top>15</top>
+					<left>120</left>
+					<width>35</width>
+					<height>35</height>
+					<texturefocus colordiffuse="button_focus">frame/menu-nofo.png</texturefocus>
+					<texturenofocus colordiffuse="FFCCCCCC">frame/menu-nofo.png</texturenofocus>
+					<animation effect="fade" time="200">VisibleChange</animation>
+					<onclick>SetProperty(MediaMenu,True,Home)</onclick>
+					<visible>!Window.IsActive(Home.xml)</visible>
+				</control>
 				<control type="label" id="18900">
 					<top>50</top>
 					<label>$PARAM[sublabel]</label>
-					<left>150</left>
+					<left>180</left>
 					<shadowcolor>text_shadow</shadowcolor>
 					<height>100</height>
 					<width>900</width>
@@ -1167,50 +1181,6 @@
 					<height>115</height>
 					<texture flipy="true">frame/InfoBar.png</texture>
 				</control>
-			<!--
-				<control type="group">
-					<visible>$PARAM[info_visible]</visible>
-					<visible>!System.HasModalDialog</visible>
-					<visible>!Skin.HasSetting(touchmode)</visible>
-					<animation effect="fade" time="400">VisibleChange</animation>
-					<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
-					<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-					<control type="button">
-						<bottom>20</bottom>
-						<left>12</left>
-						<width>36</width>
-						<height>36</height>
-						<animation effect="rotate" end="-90" center="auto" time="200" reversible="true" condition="Control.IsVisible(51) | Control.IsVisible(53)">Conditional</animation>
-						<texturefocus colordiffuse="button_focus">frame/menu-nofo.png</texturefocus>
-						<texturenofocus colordiffuse="FFCCCCCC">frame/menu-nofo.png</texturenofocus>
-						<animation effect="fade" time="200">VisibleChange</animation>
-						<onclick>SetFocus(9000)</onclick>
-						<visible>!Control.IsVisible(6160)</visible>
-					</control>
-					<control type="button" id="6160">
-						<bottom>20</bottom>
-						<left>12</left>
-						<width>36</width>
-						<height>36</height>
-						<texturefocus colordiffuse="button_focus">icons/menu.png</texturefocus>
-						<texturenofocus colordiffuse="FFCCCCCC">icons/menu.png</texturenofocus>
-						<animation effect="fade" time="200">VisibleChange</animation>
-						<onclick>SetFocus(9000)</onclick>
-						<visible>Window.IsActive(MyPVRGuide.xml) + Control.IsVisible(10)</visible>
-					</control>
-					<control type="button">
-						<bottom>16</bottom>
-						<left>64</left>
-						<width>300</width>
-						<height>44</height>
-						<shadowcolor>text_shadow</shadowcolor>
-						<label>$LOCALIZE[33063]</label>
-						<onclick>SetFocus(9000)</onclick>
-						<texturefocus />
-						<texturenofocus />
-					</control>
-				</control>
-			-->
 				<include>TouchButtons</include>
 			</control>
 		</definition>
@@ -1395,7 +1365,7 @@
 			</include>
 			<include content="IconButton">
 				<param name="control_id" value="" />
-				<param name="onclick" value="SetFocus(9000)" />
+				<param name="onclick" value="SetProperty(MediaMenu,True,Home)" />
 				<param name="icon" value="icons/settings.png" />
 				<param name="label" value="$LOCALIZE[10004]" />
 				<param name="visible" value="Window.IsMedia" />

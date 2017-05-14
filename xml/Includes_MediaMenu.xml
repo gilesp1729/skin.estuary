@@ -257,10 +257,21 @@
 		<control type="image">
 			<left>0</left>
 			<top>0</top>
-			<width>520</width>
+			<width>510</width>
 			<height>100%</height>
 			<texture border="0,0,52,0">lists/panel-mediamenu.png</texture>
 		</control>
+		
+		<control type="button">
+			<left>0</left>
+			<top>5</top>
+			<width>40</width>
+			<height>40</height>
+			<texturefocus colordiffuse="button_focus">icons/sysmenu/back.png</texturefocus>
+			<texturenofocus>icons/sysmenu/back.png</texturenofocus>
+			<onclick>ClearProperty(MediaMenu,Home)</onclick>
+		</control>
+		
 		<control type="button" id="3">
 			<description>Viewtype Toggle</description>
 			<include>HiddenObject</include>
@@ -365,7 +376,7 @@
 			<label></label>
 			<height>100%</height>
 			<width>50</width>
-			<left>-60</left>   <!-- completely off screen -->
+			<left>-60</left>
 			<top>0</top>
 			<texturefocus />
 			<texturenofocus />

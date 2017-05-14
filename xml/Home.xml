@@ -2,6 +2,7 @@
 <window>
 	<defaultcontrol>9000</defaultcontrol>
 	<backgroundcolor>background</backgroundcolor>
+	<onload>ClearProperty(MediaMenu,Home)</onload>
 	<controls>
 		<control type="button" id="20000">
 			<include>HiddenObject</include>
@@ -914,10 +915,10 @@
 					<width>480</width>
 					<height>110</height>
 					<top>100</top>
-					<onup>SetFocus(9000)</onup>
+					<onup>SetProperty(MediaMenu,True,Home)</onup>
 					<onup>PageDown</onup>
 					<onup>PageDown</onup>
-					<ondown>SetFocus(9000)</ondown>
+					<ondown>SetProperty(MediaMenu,True,Home)</ondown>
 					<ondown>PageUp</ondown>
 					<ondown>PageUp</ondown>
 					<onright>2000</onright>
