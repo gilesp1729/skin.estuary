@@ -55,8 +55,7 @@
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/previous.png"/>
 						</include>
-						<onclick condition="!VideoPlayer.Content(livetv)">PlayerControl(Previous)</onclick>
-						<onclick condition="VideoPlayer.Content(livetv)">PlayerControl(SmallSkipBackward)</onclick>
+						<onclick>PlayerControl(SmallSkipBackward)</onclick>
 					</control>
 					<control type="radiobutton" id="602">
 						<textureradioonfocus colordiffuse="white">osd/fullscreen/buttons/play.png</textureradioonfocus>
@@ -81,8 +80,7 @@
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/next.png"/>
 						</include>
-						<onclick condition="!VideoPlayer.Content(livetv)">PlayerControl(Next)</onclick>
-						<onclick condition="VideoPlayer.Content(livetv)">PlayerControl(SmallSkipForward)</onclick>
+						<onclick>PlayerControl(SmallSkipForward)</onclick>
 					</control>
 					<control type="radiobutton" id="642">
 						<include content="OSDButton">

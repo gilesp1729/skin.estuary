@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file contains the mapping of keyboard keys to actions within Kodi.              -->
+<!-- Some commonly used WMC keys are mapped in this custom keymap.                        -->
+<keymap>
+  <TVGuide>
+    <!-- scroll guide up and down with wheel, and left/right with next/prev track -->
+    <mouse>
+      <wheeldown>Down</wheeldown>
+      <wheelup>Up</wheelup>
+    </mouse>
+    <keyboard>
+      <next_track>Right</next_track>
+      <prev_track>Left</prev_track>
+    </keyboard>
+  </TVGuide>
+  <VideoOSD>
+    <!-- for some reason we need these in appcommand section for video and OSD !!?? -->
+    <appcommand>
+      <next_track>PlayerControl(SmallSkipForward)</next_track>
+      <prev_track>PlayerControl(SmallSkipBackward)</prev_track>
+    </appcommand>
+    <keyboard>
+      <next_track>PlayerControl(SmallSkipForward)</next_track>
+      <prev_track>PlayerControl(SmallSkipBackward)</prev_track>
+      <g mod="ctrl">runscript(special://masterprofile/keymaps/guidekey.py)</g> 
+    </keyboard>
+  </VideoOSD>
+  <FullScreenVideo>
+    <appcommand>
+      <next_track>PlayerControl(SmallSkipForward)</next_track>
+      <prev_track>PlayerControl(SmallSkipBackward)</prev_track>
+    </appcommand>
+    <keyboard>
+      <next_track>PlayerControl(SmallSkipForward)</next_track>
+      <prev_track>PlayerControl(SmallSkipBackward)</prev_track>
+      <g mod="ctrl">runscript(special://masterprofile/keymaps/guidekey.py)</g> 
+    </keyboard>
+  </FullScreenVideo>
+</keymap>
