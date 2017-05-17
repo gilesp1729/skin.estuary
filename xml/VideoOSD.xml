@@ -22,6 +22,17 @@
 			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(fullscreeninfo) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(osdvideosettings) | Window.IsVisible(OSDAudioDSPSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(playerprocessinfo) | Window.IsVisible(osdcmssettings) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<control type="label">
+				<left>30</left>
+				<top>0</top>
+				<align>left</align>
+				<textoffsetx>20</textoffsetx>
+				<aligny>center</aligny>
+				<width>1000</width>
+				<height>60</height>
+				<label>$VAR[VideoOSDHelpTextVarLeft]</label>
+				<visible>!Player.ShowInfo + !PVR.IsTimeShift</visible>
+			</control>
+			<control type="label">
 				<right>30</right>
 				<top>0</top>
 				<align>right</align>
@@ -29,7 +40,7 @@
 				<aligny>center</aligny>
 				<width>1000</width>
 				<height>60</height>
-				<label>$VAR[VideoOSDHelpTextVar]</label>
+				<label>$VAR[VideoOSDHelpTextVarRight]</label>
 				<visible>!Player.ShowInfo + !PVR.IsTimeShift</visible>
 			</control>
 			<control type="group" id="200">

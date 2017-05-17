@@ -14,7 +14,7 @@
 				<left>-40</left>
 				<width>120%</width>
 				<height>200</height>
-				<texture flipy="true">frame/osdfade.png</texture>
+				<texture flipy="true" colordiffuse="osdfade">frame/osdfade2.png</texture>
 			</control>
 			<control type="group">
 				<visible>!Window.IsVisible(videoosd) + !Window.IsVisible(musicosd)</visible>

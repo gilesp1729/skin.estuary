@@ -17,4 +17,5 @@
 	<color name="disabled">40FFFFFF</color>
 	<color name="selected">FF11E7B1</color>
 	<color name="invalid">FFFF0000</color>
+	<color name="osdfade">F0102860</color>
 </colors>

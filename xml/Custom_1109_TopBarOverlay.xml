@@ -14,7 +14,7 @@
 				<top>0</top>
 				<width>100%</width>
 				<height>170</height>
-				<texture>frame/osdfade.png</texture>
+				<texture colordiffuse="osdfade">frame/osdfade2.png</texture>
 			</control>
 			<control type="image">
 				<left>10</left>
