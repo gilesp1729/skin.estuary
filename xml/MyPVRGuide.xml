@@ -24,6 +24,15 @@
 						<width>100%</width>
 						<bottom>336</bottom>
 						<texture colordiffuse="E6FFFFFF">dialogs/dialog-bg-nobo.png</texture>
+						<visible>!Player.HasMedia</visible>
+					</control>
+					<control type="image">
+						<left>0</left>
+						<top>-10</top>
+						<width>100%</width>
+						<bottom>60</bottom>
+						<texture colordiffuse="FFFFFFFF">dialogs/dialog-bg-nobo.png</texture>
+						<visible>Player.HasMedia</visible>
 					</control>
 					<control type="epggrid" id="10">
 						<left>0</left>
