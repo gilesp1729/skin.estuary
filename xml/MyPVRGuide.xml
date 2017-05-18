@@ -179,6 +179,46 @@
 						<texturesliderbackground colordiffuse="22FFFFFF">colors/white.png</texturesliderbackground>
 						<animation effect="fade" start="100" end="40" time="0" condition="!system.getbool(input.enablemouse)">Conditional</animation>
 					</control>
+					
+					<control type="button">
+						<top>300</top>
+						<left>300</left>
+						<width>40</width>
+						<height>80</height>
+						<onclick>Left</onclick>
+						<texturenofocus>buttons/spinctrl/arrow-light-left.png</texturenofocus>
+						<texturefocus colordiffuse="button_focus">buttons/spinctrl/arrow-light-left.png</texturefocus>
+					</control>
+					<control type="button">
+						<top>300</top>
+						<right>20</right>
+						<width>40</width>
+						<height>80</height>
+						<onclick>Right</onclick>
+						<texturenofocus>buttons/spinctrl/arrow-light-right.png</texturenofocus>
+						<texturefocus colordiffuse="button_focus">buttons/spinctrl/arrow-light-right.png</texturefocus>
+					</control>
+					
+					<control type="button">
+						<top>40</top>
+						<left>300</left>
+						<width>40</width>
+						<height>80</height>
+						<onclick>PageUp</onclick>
+						<texturenofocus>buttons/spinctrl/arrow-light-up.png</texturenofocus>
+						<texturefocus colordiffuse="button_focus">buttons/spinctrl/arrow-light-up.png</texturefocus>
+					</control>
+					<control type="button">
+						<bottom>330</bottom>
+						<left>300</left>
+						<width>40</width>
+						<height>80</height>
+						<onclick>PageDown</onclick>
+						<texturenofocus>buttons/spinctrl/arrow-light-down.png</texturenofocus>
+						<texturefocus colordiffuse="button_focus">buttons/spinctrl/arrow-light-down.png</texturefocus>
+					</control>
+
+					
 				</control>
 				<control type="group">
 					<bottom>0</bottom>
