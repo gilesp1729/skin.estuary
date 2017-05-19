@@ -76,7 +76,7 @@
 								<top>-2</top>
 								<width>350</width>
 								<height>80</height>
-								<font>font12</font>
+								<font>font13</font>
 								<label>$INFO[ListItem.ChannelName]</label>
 								<aligny>center</aligny>
 								<textoffsetx>10</textoffsetx>
@@ -122,8 +122,8 @@
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 							<control type="image">
-								<left>6</left>
-								<top>35</top>
+								<left>2</left>
+								<top>2</top>
 								<width>20</width>
 								<height>20</height>
 								<texture>$VAR[PVRTimerIcon]</texture>
@@ -160,8 +160,8 @@
 								<label>$INFO[ListItem.Label]</label>
 							</control>
 							<control type="image">
-								<left>6</left>
-								<top>35</top>
+								<left>2</left>
+								<top>2</top>
 								<width>20</width>
 								<height>20</height>
 								<texture>$VAR[PVRTimerIcon]</texture>
