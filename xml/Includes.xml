@@ -638,6 +638,17 @@
 		<param name="id">33333</param>
 		<param name="posy">20</param>
 		<definition>
+			<control type="button">
+				<left>0</left>
+				<top>10</top>
+				<width>40</width>
+				<height>40</height>
+				<label></label>
+				<onclick>Action(Back)</onclick>
+				<texturefocus colordiffuse="button_focus">icons/sysmenu/back.png</texturefocus>
+				<texturenofocus colordiffuse="white">icons/sysmenu/back.png</texturenofocus>
+				<visible>!Window.IsActive(Home.xml)</visible>
+			</control>
 			<control type="grouplist">
 				<left>3%</left>
 				<top>$PARAM[posy]</top>
@@ -665,6 +676,43 @@
 					<height>100</height>
 					<width>100%</width>
 				</control>
+			</control>
+			<control type="grouplist">
+				<top>0</top>
+				<align>right</align>
+				<right>20</right>
+				<height>100</height>
+				<orientation>horizontal</orientation>
+				<width>900</width>
+				<itemgap>10</itemgap>
+				<control type="button">
+					<top>10</top>
+					<width>40</width>
+					<height>40</height>
+					<label></label>
+					<onclick>Minimize</onclick>
+					<texturefocus colordiffuse="button_focus">icons/sysmenu/minimize.png</texturefocus>
+					<texturenofocus colordiffuse="white">icons/sysmenu/minimize.png</texturenofocus>
+				</control>
+				<control type="button">
+					<top>10</top>
+					<width>40</width>
+					<height>40</height>
+					<label></label>
+					<onclick>ToggleFullscreen</onclick>
+					<texturefocus colordiffuse="button_focus">icons/sysmenu/window.png</texturefocus>
+					<texturenofocus colordiffuse="white">icons/sysmenu/window.png</texturenofocus>
+				</control>
+				<control type="button">
+					<top>10</top>
+					<width>40</width>
+					<height>40</height>
+					<label></label>
+					<onclick>Quit</onclick>
+					<texturefocus colordiffuse="button_focus">icons/sysmenu/close.png</texturefocus>
+					<texturenofocus colordiffuse="white">icons/sysmenu/close.png</texturenofocus>
+				</control>
+
 			</control>
 		</definition>
 	</include>
