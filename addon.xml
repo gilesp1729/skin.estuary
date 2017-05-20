@@ -141,18 +141,14 @@
 		<platform>all</platform>
 		<license>CC BY-SA 4.0, GNU GENERAL PUBLIC LICENSE Version 2.0</license>
 		<forum>http://forum.kodi.tv/</forum>
-		<source>https://github.com/xbmc/skin.estuary/</source>
+		<source>https://github.com/gilesp1729/skin.mousetuary/tree/krypton/</source>
 		<assets>
 			<icon>resources/icon.png</icon>
 			<fanart>resources/fanart.jpg</fanart>
-			<screenshot>resources/screenshot-01.jpg</screenshot>
-			<screenshot>resources/screenshot-02.jpg</screenshot>
-			<screenshot>resources/screenshot-03.jpg</screenshot>
-			<screenshot>resources/screenshot-04.jpg</screenshot>
-			<screenshot>resources/screenshot-05.jpg</screenshot>
-			<screenshot>resources/screenshot-06.jpg</screenshot>
-			<screenshot>resources/screenshot-07.jpg</screenshot>
-			<screenshot>resources/screenshot-08.jpg</screenshot>
+			<screenshot>resources/osd.jpg</screenshot>
+			<screenshot>resources/sidemenu.jpg</screenshot>
+			<screenshot>resources/tvguide.jpg</screenshot>
+			<screenshot>resources/guide-from-osd.jpg</screenshot>
 		</assets>
 	</extension>
 </addon>
