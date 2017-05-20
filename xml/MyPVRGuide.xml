@@ -30,8 +30,8 @@
 						<left>0</left>
 						<top>-10</top>
 						<width>100%</width>
-						<bottom>60</bottom>
-						<texture colordiffuse="FFFFFFFF">dialogs/dialog-bg-nobo.png</texture>
+						<bottom>100</bottom>
+						<texture colordiffuse="osdfade">dialogs/dialog-bg-nobo2.png</texture>
 						<visible>Player.HasMedia</visible>
 					</control>
 					<control type="epggrid" id="10">

@@ -846,7 +846,7 @@
 					<top>0</top>
 					<width>110%</width>
 					<height>130</height>
-					<texture>frame/InfoBar.png</texture>
+					<texture colordiffuse="osdfade">frame/InfoBar2.png</texture>
 					<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(screencalibration)">WindowClose</animation>
 				</control>
 				<control type="grouplist">
@@ -1181,7 +1181,7 @@
 					<bottom>0</bottom>
 					<width>110%</width>
 					<height>115</height>
-					<texture flipy="true">frame/InfoBar.png</texture>
+					<texture colordiffuse="osdfade"flipy="true">frame/InfoBar2.png</texture>
 				</control>
 				<include>TouchButtons</include>
 			</control>
