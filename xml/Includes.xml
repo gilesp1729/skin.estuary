@@ -836,13 +836,11 @@
 	</include>
 	<include name="TopBar">
 		<param name="sublabel">$INFO[Container.SortMethod,$LOCALIZE[31022]: ,  ∙  ]$INFO[Container.CurrentItem,, / ]$INFO[Container.NumItems]</param>
-		<param name="visible">!Player.HasVideo</param>
 		<definition>
 			<control type="group">
 				<animation effect="slide" end="0,-112" time="300" tween="sine" easing="inout" condition="$EXP[infodialog_active]">conditional</animation>
 				<depth>DepthBars</depth>
 				<animation effect="fade" start="0" end="100" time="300" condition="[Window.Previous(fullscreenvideo) | Window.Previous(startup)] + !Window.IsVisible(1109)">WindowOpen</animation>
-				<visible>$PARAM[visible]</visible>
 				<control type="image">
 					<left>0</left>
 					<top>0</top>
@@ -903,7 +901,7 @@
 					<onclick>Action(Back)</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/back.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/back.png</texturenofocus>
-					<visible>!Player.HasMedia + !Window.IsActive(Home.xml)</visible>
+					<visible>!Window.IsActive(Home.xml)</visible>
 				</control>
 				<control type="button">
 					<left>60</left>
@@ -914,7 +912,7 @@
 					<onclick>ActivateWindow(home)</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/home.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/home.png</texturenofocus>
-					<visible>!Player.HasMedia + !Window.IsActive(Home.xml)</visible>
+					<visible>!Window.IsActive(Home.xml)</visible>
 				</control>
 				<control type="button" id="6160">
 					<top>15</top>
