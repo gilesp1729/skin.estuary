@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window>
-	<defaultcontrol always="true">602</defaultcontrol>
+	<onload>Dialog.Close(fullscreeninfo)</onload>
+	<onload condition="!Player.PauseEnabled">SetFocus(603)</onload>
+	<!-- <defaultcontrol always="true">602</defaultcontrol> -->
 	<depth>DepthOSD</depth>
 	<controls>
 		<control type="button">
@@ -38,6 +40,12 @@
 				<ondown>noop</ondown>
 				<onleft>5000</onleft>
 				<onright>620</onright>
+				<control type="radiobutton" id="641">
+					<include content="OSDButton">
+						<param name="texture" value="osd/fullscreen/buttons/rewind.png"/>
+					</include>
+					<onclick>PlayerControl(Rewind)</onclick>
+				</control>
 				<control type="radiobutton" id="600">
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/previous.png"/>
@@ -50,11 +58,11 @@
 					<textureradioofffocus colordiffuse="white">osd/fullscreen/buttons/pause.png</textureradioofffocus>
 					<textureradiooffnofocus>osd/fullscreen/buttons/pause.png</textureradiooffnofocus>
 					<texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/button-fo.png</texturefocus>
-					<width>76</width>
-					<animation center="38,38" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
-					<height>76</height>
-					<radiowidth>74</radiowidth>
-					<radioheight>74</radioheight>
+					<width>56</width>
+					<animation center="28,28" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
+					<height>56</height>
+					<radiowidth>54</radiowidth>
+					<radioheight>54</radioheight>
 					<font></font>
 					<texturenofocus />
 					<radioposx>1</radioposx>
@@ -62,18 +70,24 @@
 					<selected>Player.Paused</selected>
 					<onclick>PlayerControl(Play)</onclick>
 				</control>
-				<control type="radiobutton" id="603">
-					<include content="OSDButton">
-						<param name="texture" value="osd/fullscreen/buttons/stop.png"/>
-					</include>
-					<onclick>PlayerControl(Stop)</onclick>
-				</control>
 				<control type="radiobutton" id="605">
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/next.png"/>
 					</include>
 					<onclick>PlayerControl(Next)</onclick>
 					<visible>MusicPlayer.HasNext</visible>
+				</control>
+				<control type="radiobutton" id="642">
+					<include content="OSDButton">
+						<param name="texture" value="osd/fullscreen/buttons/fastfwd.png"/>
+					</include>
+					<onclick>PlayerControl(Forward)</onclick>
+				</control>
+				<control type="radiobutton" id="603">
+					<include content="OSDButton">
+						<param name="texture" value="osd/fullscreen/buttons/stop.png"/>
+					</include>
+					<onclick>PlayerControl(Stop)</onclick>
 				</control>
 			</control>
 			<control type="grouplist" id="202">
@@ -87,8 +101,8 @@
 				<orientation>horizontal</orientation>
 				<onup>87</onup>
 				<ondown>noop</ondown>
-				<onleft>605</onleft>
-				<onright>600</onright>
+				<onleft>603</onleft>
+				<onright>641</onright>
 				<control type="radiobutton" id="620">
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/rating.png"/>
@@ -102,8 +116,8 @@
 					<control type="button" id="704">
 						<left>0</left>
 						<top>0</top>
-						<width>74</width>
-						<height>74</height>
+						<width>54</width>
+						<height>54</height>
 						<label></label>
 						<font></font>
 						<texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/button-fo.png</texturefocus>
@@ -131,11 +145,11 @@
 					<textureradioondisabled colordiffuse="disabled">osd/fullscreen/buttons/random-on.png</textureradioondisabled>
 					<textureradiooffdisabled colordiffuse="disabled">osd/fullscreen/buttons/random-off.png</textureradiooffdisabled>
 					<texturefocus colordiffuse="button_focus">osd/fullscreen/buttons/button-fo.png</texturefocus>
-					<width>76</width>
-					<animation center="38,38" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
-					<height>76</height>
-					<radiowidth>74</radiowidth>
-					<radioheight>74</radioheight>
+					<width>56</width>
+					<animation center="28,28" effect="zoom" end="100" reversible="false" start="95" time="480" tween="back">Focus</animation>
+					<height>56</height>
+					<radiowidth>54</radiowidth>
+					<radioheight>54</radioheight>
 					<font></font>
 					<texturenofocus />
 					<radioposx>1</radioposx>
@@ -195,9 +209,9 @@
 				<height>25</height>
 				<onup>8010</onup>
 				<ondown>650</ondown>
-				<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-				<textureslidernib>osd/progress/nub_leftright.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernibfocus>
+				<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-nib.png</texturesliderbar>
+				<textureslidernib>buttons/slider-nib.png</textureslidernib>
+				<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
 				<info>Player.Progress</info>
 				<visible>Player.SeekEnabled</visible>
 				<action>seek</action>
@@ -210,9 +224,9 @@
 				<height>25</height>
 				<onup>8010</onup>
 				<ondown>650</ondown>
-				<texturesliderbar colordiffuse="00FFFFFF">osd/progress/nub_leftright.png</texturesliderbar>
-				<textureslidernib colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernib>
-				<textureslidernibfocus colordiffuse="button_focus">osd/progress/nub_leftright.png</textureslidernibfocus>
+				<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-nib.png</texturesliderbar>
+				<textureslidernib colordiffuse="button_focus">buttons/slider-nib.pngg</textureslidernib>
+				<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
 				<info>Player.Progress</info>
 				<visible>Player.SeekEnabled</visible>
 				<action>seek</action>
