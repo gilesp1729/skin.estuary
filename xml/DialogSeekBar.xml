@@ -13,7 +13,7 @@
 			<control type="image">
 				<left>-40</left>
 				<width>120%</width>
-				<height>200</height>
+				<height>240</height>
 				<texture flipy="true" colordiffuse="osdfade">frame/osdfade2.png</texture>
 			</control>
 			<control type="group">
@@ -167,6 +167,7 @@
 				<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
 				<midtexture colordiffuse="button_focus">colors/white.png</midtexture>
 			</control>
+		<!--
 			<control type="slider" id="401">
 				<left>5</left>
 				<top>65</top>
@@ -177,6 +178,8 @@
 				<textureslidernibfocus colordiffuse="button_focus">colors/white.png</textureslidernibfocus>
 				<visible>!VideoPlayer.Content(livetv)</visible>
 			</control>
+		-->
+		
 		</control>
 		<control type="group">
 			<visible>Player.ShowInfo + VideoPlayer.Content(LiveTV) + Window.IsActive(fullscreenvideo) + !Window.IsActive(fullscreeninfo)</visible>

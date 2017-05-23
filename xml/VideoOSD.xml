@@ -67,6 +67,7 @@
 							<param name="texture" value="osd/fullscreen/buttons/previous.png"/>
 						</include>
 						<onclick>PlayerControl(SmallSkipBackward)</onclick>
+						<visible>Player.PauseEnabled</visible>
 					</control>
 					<control type="radiobutton" id="602">
 						<textureradioonfocus colordiffuse="white">osd/fullscreen/buttons/play.png</textureradioonfocus>
@@ -92,6 +93,7 @@
 							<param name="texture" value="osd/fullscreen/buttons/next.png"/>
 						</include>
 						<onclick>PlayerControl(SmallSkipForward)</onclick>
+						<visible>Player.PauseEnabled</visible>
 					</control>
 					<control type="radiobutton" id="642">
 						<include content="OSDButton">
@@ -287,59 +289,6 @@
 					<visible>Control.HasFocus(87)</visible>
 				</control>
 			</control>
-
-
-
-		<!--  Enable this, or something like it, when we have a PVR B/E that reports this properly
-			<control type="group" id="6001">
-				<top>-5</top>
-				<visible>PVR.IsTimeShift + !Player.ChannelPreviewActive</visible>
-				<animation effect="fade" time="300">VisibleChange</animation>
-				<control type="label">
-					<top>0</top>
-					<right>20</right>
-					<width>400</width>
-					<height>50</height>
-					<align>right</align>
-					<aligny>center</aligny>
-					<font>font30</font>
-					<label>$INFO[PVR.TimeShiftEnd]</label>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<left>20</left>
-					<width>400</width>
-					<height>50</height>
-					<align>left</align>
-					<aligny>center</aligny>
-					<font>font30</font>
-					<label>$INFO[PVR.TimeShiftStart]</label>
-				</control>
-				<control type="label">
-					<top>0</top>
-					<left>20</left>
-					<right>20</right>
-					<height>50</height>
-					<align>center</align>
-					<aligny>center</aligny>
-					<font>font30</font>
-					<label>[B]$LOCALIZE[31026][/B] $INFO[PVR.timeshiftcur]</label>
-				</control>
-				<control type="progress">
-					<left>0</left>
-					<top>50</top>
-					<width>100%</width>
-					<height>15</height>
-					<info>PVR.TimeshiftProgress</info>
-					<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
-					<midtexture>colors/white50.png</midtexture>
-				</control>
-			</control>
-		-->
-
-
-
-
 		</control>
 	</controls>
 </window>
