@@ -1,2 +1,35 @@
 ﻿1.0.1
-Initial commit. Changes from Estuary as per TODO.xlsx.
+Initial version. Changes from Estuary:
+
+Home Screen and widget lists:
+Sysmenu: minimise, window, exit
+Back and Home to topbar
+Tidy up text and clock in topbar
+Make sidemenu stay up with mouse movement
+Scroll bars in widget lists
+
+Video OSD:
+OSD pause button flickers when mouse moved
+OSD FF/REW and volume buttons
+OSD skip fwd/back buttons
+OSD transparent background colour nicer, also guide
+Get rid of fwd/back buttons from OSD slider nib
+Get rid of misleading message for slider
+Use full guide rather than the abbreviated OSD guide
+Remove OSD channel button
+
+Live TV widget list:
+Channels and Guide seem redundant.
+Make Guide come first in widget list
+
+TV Guide:
+Guide should roll up and down with the mouse wheel, not left to right. (need keymap)
+Guide needs up/down/left/right buttons like WMC
+Guide rows need to be a little bigger, also guide font
+
+Incomplete:
+Fix over-aggressive autoscroll in Addons/MyAddons list
+VideoOSDHelpTextVar for new buttons (variables.xml)
+Right-click option to delete recent channels from list
+
+------------------------------------------------------------------------
