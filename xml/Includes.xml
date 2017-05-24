@@ -1050,6 +1050,7 @@
 						<onclick>Minimize</onclick>
 						<texturefocus colordiffuse="button_focus">icons/sysmenu/minimize.png</texturefocus>
 						<texturenofocus colordiffuse="white">icons/sysmenu/minimize.png</texturenofocus>
+						<visible>!System.IsStandalone</visible>
 					</control>
 					<control type="button">
 						<top>10</top>
@@ -1059,6 +1060,7 @@
 						<onclick>ToggleFullscreen</onclick>
 						<texturefocus colordiffuse="button_focus">icons/sysmenu/window.png</texturefocus>
 						<texturenofocus colordiffuse="white">icons/sysmenu/window.png</texturenofocus>
+						<visible>!System.IsStandalone</visible>
 					</control>
 					<control type="button">
 						<top>10</top>
@@ -1068,6 +1070,7 @@
 						<onclick>Quit</onclick>
 						<texturefocus colordiffuse="button_focus">icons/sysmenu/close.png</texturefocus>
 						<texturenofocus colordiffuse="white">icons/sysmenu/close.png</texturenofocus>
+						<visible>!System.IsStandalone</visible>
 					</control>
 					
 				</control>
