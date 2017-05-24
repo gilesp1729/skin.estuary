@@ -15,6 +15,48 @@
 			<texturenofocus />
 			<onclick>Action(close)</onclick>
 		</control>
+		
+		<!-- Can't put these in the top bar overlay, for some reason they don't pick up the focus -->
+		<!-- And no, it's not the button above. -->
+		<control type="grouplist">
+			<top>0</top>
+			<align>right</align>
+			<right>20</right>
+			<height>100</height>
+			<orientation>horizontal</orientation>
+			<width>900</width>
+			<itemgap>10</itemgap>
+			<animation effect="fade" time="150">VisibleChange</animation>
+
+			<control type="button">
+				<top>10</top>
+				<width>40</width>
+				<height>40</height>
+				<label></label>
+				<onclick>Minimize</onclick>
+				<texturefocus colordiffuse="button_focus">icons/sysmenu/minimize.png</texturefocus>
+				<texturenofocus colordiffuse="white">icons/sysmenu/minimize.png</texturenofocus>
+			</control>
+			<control type="button">
+				<top>10</top>
+				<width>40</width>
+				<height>40</height>
+				<label></label>
+				<onclick>ToggleFullscreen</onclick>
+				<texturefocus colordiffuse="button_focus">icons/sysmenu/window.png</texturefocus>
+				<texturenofocus colordiffuse="white">icons/sysmenu/window.png</texturenofocus>
+			</control>
+			<control type="button">
+				<top>10</top>
+				<width>40</width>
+				<height>40</height>
+				<label></label>
+				<onclick>Quit</onclick>
+				<texturefocus colordiffuse="button_focus">icons/sysmenu/close.png</texturefocus>
+				<texturenofocus colordiffuse="white">icons/sysmenu/close.png</texturenofocus>
+			</control>
+		</control>
+
 		<control type="group" id="200">
 			<bottom>0</bottom>
 			<height>120</height>
