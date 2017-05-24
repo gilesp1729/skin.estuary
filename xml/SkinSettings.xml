@@ -61,6 +61,12 @@
 					<onclick>Skin.ToggleSetting(hide_mediaflags)</onclick>
 					<selected>!Skin.HasSetting(hide_mediaflags)</selected>
 				</control>
+				<control type="radiobutton" id="706">
+					<label>Hide genre coloring in TV guide</label>
+					<include>DefaultSettingButton</include>
+					<onclick>Skin.ToggleSetting(HideEPGGenreColoring)</onclick>
+					<selected>Skin.HasSetting(HideEPGGenreColoring)</selected>
+				</control>
 			</control>
 			<control type="grouplist" id="600">
 				<top>160</top>

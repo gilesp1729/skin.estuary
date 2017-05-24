@@ -111,6 +111,13 @@
 								<width>58</width>
 								<height>78</height>
 								<texture border="3" fallback="windows/pvr/epg-genres/0.png">$INFO[ListItem.Property(GenreType),windows/pvr/epg-genres/,.png]</texture>
+								<visible>!Skin.HasSetting(HideEPGGenreColoring)</visible>
+							</control>
+							<control type="image" id="2">
+								<width>58</width>
+								<height>78</height>
+								<texture border="3">windows/pvr/epg-genres/0.png</texture>
+								<visible>Skin.HasSetting(HideEPGGenreColoring)</visible>
 							</control>
 							<control type="label" id="1">
 								<left>10</left>
@@ -148,7 +155,14 @@
 								<height>78</height>
 								<top>0</top>
 								<texture border="3" fallback="windows/pvr/epg-genres/0.png">$INFO[ListItem.Property(GenreType),windows/pvr/epg-genres/,.png]</texture>
-								<visible>!Control.HasFocus(10)</visible>
+								<visible>!Control.HasFocus(10) + !Skin.HasSetting(HideEPGGenreColoring)</visible>
+							</control>
+							<control type="image" id="2">
+								<width>58</width>
+								<height>78</height>
+								<top>0</top>
+								<texture border="3">windows/pvr/epg-genres/0.png</texture>
+								<visible>!Control.HasFocus(10) + Skin.HasSetting(HideEPGGenreColoring)</visible>
 							</control>
 							<control type="label" id="1">
 								<left>10</left>

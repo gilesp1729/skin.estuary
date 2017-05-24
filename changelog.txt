@@ -27,9 +27,14 @@ Guide should roll up and down with the mouse wheel, not left to right. (need key
 Guide needs up/down/left/right buttons like WMC
 Guide rows need to be a little bigger, also guide font
 
+------------------------------------------------------------------------
+1.0.2
+
+TV Guide:
+Provide setting to control genre coloring
+
+------------------------------------------------------------------------
 Incomplete:
 Fix over-aggressive autoscroll in Addons/MyAddons list
 VideoOSDHelpTextVar for new buttons (variables.xml)
 Right-click option to delete recent channels from list
-
-------------------------------------------------------------------------
