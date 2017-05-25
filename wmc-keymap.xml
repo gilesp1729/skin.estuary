@@ -16,23 +16,31 @@
   <VideoOSD>
     <!-- for some reason we need these in appcommand section for video and OSD !!?? -->
     <appcommand>
-      <next_track>PlayerControl(SmallSkipForward)</next_track>
-      <prev_track>PlayerControl(SmallSkipBackward)</prev_track>
+      <next_track>Seek(30)</next_track>
+      <prev_track>Seek(-7)</prev_track>
     </appcommand>
+    <mouse>
+      <wheeldown>Seek(-2)</wheeldown>
+      <wheelup>Seek(2)</wheelup>
+    </mouse>
     <keyboard>
-      <next_track>PlayerControl(SmallSkipForward)</next_track>
-      <prev_track>PlayerControl(SmallSkipBackward)</prev_track>
+      <next_track>Seek(30)</next_track>
+      <prev_track>Seek(-7)</prev_track>
       <g mod="ctrl">runscript(special://masterprofile/keymaps/guidekey.py)</g> 
     </keyboard>
   </VideoOSD>
   <FullScreenVideo>
     <appcommand>
-      <next_track>PlayerControl(SmallSkipForward)</next_track>
-      <prev_track>PlayerControl(SmallSkipBackward)</prev_track>
+      <next_track>Seek(30)</next_track>
+      <prev_track>Seek(-7)</prev_track>
     </appcommand>
+    <mouse>
+      <wheeldown>Seek(-2)</wheeldown>
+      <wheelup>Seek(2)</wheelup>
+    </mouse>
     <keyboard>
-      <next_track>PlayerControl(SmallSkipForward)</next_track>
-      <prev_track>PlayerControl(SmallSkipBackward)</prev_track>
+      <next_track>Seek(30)</next_track>
+      <prev_track>Seek(-7)</prev_track>
       <g mod="ctrl">runscript(special://masterprofile/keymaps/guidekey.py)</g> 
     </keyboard>
   </FullScreenVideo>

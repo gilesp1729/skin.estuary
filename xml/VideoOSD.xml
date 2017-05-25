@@ -109,7 +109,7 @@
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/previous.png"/>
 						</include>
-						<onclick>PlayerControl(SmallSkipBackward)</onclick>
+						<onclick>Seek(-7)</onclick>
 						<visible>Player.PauseEnabled</visible>
 					</control>
 					<control type="radiobutton" id="602">
@@ -135,7 +135,7 @@
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/next.png"/>
 						</include>
-						<onclick>PlayerControl(SmallSkipForward)</onclick>
+						<onclick>Seek(30)</onclick>
 						<visible>Player.PauseEnabled</visible>
 					</control>
 					<control type="radiobutton" id="642">
