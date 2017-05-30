@@ -33,6 +33,9 @@ Guide rows need to be a little bigger, also guide font
 TV Guide:
 Provide setting to control genre coloring
 
+Video OSD:
+Partial implementation of timeshift buffer to scale using script
+
 ------------------------------------------------------------------------
 Incomplete:
 Fix over-aggressive autoscroll in Addons/MyAddons list
