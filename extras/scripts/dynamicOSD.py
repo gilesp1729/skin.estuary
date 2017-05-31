@@ -34,17 +34,28 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
 # Position = (TimeshiftStart - StartTime) / Duration
 # Width = (TimeshiftEnd - TimeshiftStart) / Duration
 # (clamped and scaled appropriately into pixels)
+#
 
    def calcProgress(self):
       duration = self.translate_hhmm(xbmc.getInfoLabel('Player.Duration(hh:mm)'))
-      startTime = self.translate_hhmm(xbmc.getInfoLabel('Player.StartTime'))
+
+# Player.StartTime can be unreliable if starting chanel from bootup.
+# Calculate it from FinishTime - Duration.
+#      startTime = self.translate_hhmm(xbmc.getInfoLabel('Player.StartTime'))
+      finish_time = self.translate_hhmm(xbmc.getInfoLabel('Player.FinishTime'))
+      startTime = self.subtract_times(finish_time, duration)
+
       tsStart = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftStart'))
       tsEnd = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftEnd'))
+      
+# Take care of tsStart before the start of the current program
+      tsDuration = min(self.subtract_times(tsEnd, tsStart), self.subtract_times(tsEnd, startTime))
+      self.progWidth = (tsDuration * self.barWidth) / duration
 
-      tsEnd = self.subtract_times(tsEnd, tsStart)
-      self.progWidth = (tsEnd * self.barWidth) / duration
-
+# Watch out for 12/24 hours added to the difference if tsStart earlier than startTime
       tsStart = self.subtract_times(tsStart, startTime)
+      if tsStart > tsEnd:
+         tsStart = 0
       self.progX = (tsStart * self.barWidth) / duration
 
       

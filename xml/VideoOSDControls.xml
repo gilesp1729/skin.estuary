@@ -313,8 +313,8 @@
 					<width>100%</width>
 					<height>25</height>
 					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
-					<textureslidernib>buttons/slider-nib.png</textureslidernib>
-					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
+					<textureslidernib></textureslidernib>
+					<textureslidernibfocus></textureslidernibfocus>
 					<info>Player.Progress</info>
 					<action>seek</action>
 					<visible>!Control.HasFocus(87)</visible>
@@ -324,8 +324,8 @@
 					<left>0</left>
 					<width>100%</width>
 					<height>25</height>
-					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
-					<textureslidernib colordiffuse="button_focus">buttons/slider-nib.png</textureslidernib>
+					<texturesliderbar></texturesliderbar>
+					<textureslidernib></textureslidernib>
 					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
 					<info>Player.Progress</info>
 					<action>seek</action>
