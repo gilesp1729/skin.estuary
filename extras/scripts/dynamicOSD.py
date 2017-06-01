@@ -23,6 +23,8 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
       self.addControl(self.tsProgressBg)
       self.tsProgressBg.setEnabled(False)
       
+# Let player settle before asking it for duration, etc for the first time.
+      xbmc.sleep(100)
       self.calcProgress()
       self.tsProgress = xbmcgui.ControlButton(self.progX, self.barY, self.progWidth, 15, ' ', noFocusTexture=white50)
       self.addControl(self.tsProgress)
@@ -69,13 +71,6 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
          self.tsProgress.setVisible(False)
       else:
          self.tsProgress.setWidth(self.progWidth)
-
-# Try and send clicks and stuff through to the underlying window, to minimise out-of-sync unloading
-# of OSD, SeekBar and TopBarOverlay (not altogether successful)
-
-   def onClick(self):
-      pass
-
 # Translate hh:mm into a time in minutes. Ignore any AM/PM in the string.
    def translate_hhmm(self, hhmm):
       colon = hhmm.find(':')
@@ -102,16 +97,3 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
 display = DynamicOSD('VideoOSDControls.xml', 'special://skin/xml')
 display.doModal()
 del display
-
-
-
-
-
-
-#tsStart =  xbmc.getInfoLabel('PVR.TimeshiftStart')
-#tsEnd =  xbmc.getInfoLabel('PVR.TimeshiftEnd')
-#start =  xbmc.getInfoLabel('Player.StartTime')
-#end =  xbmc.getInfoLabel('Player.FinishTime')
-
-#win.setProperty('TsStartScaled', duration)
-#win.setProperty('TsEndScaled', '50')
