@@ -29,6 +29,8 @@ Guide rows need to be a little bigger, also guide font
 
 ------------------------------------------------------------------------
 1.0.2
+General:
+Some changes to improve touch support on small screens (it's not just for mice!)
 
 TV Guide:
 Provide setting to control genre coloring

@@ -28,7 +28,7 @@
 			<width>900</width>
 			<itemgap>10</itemgap>
 			<animation effect="fade" time="150">VisibleChange</animation>
-			<visible>!System.IsStandalone</visible>
+			<visible>$EXP[display_sysmenu]</visible>
 
 			<control type="button">
 				<top>10</top>

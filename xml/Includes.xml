@@ -38,6 +38,9 @@
 	<expression name="sidebar_visible">ControlGroup(9000).HasFocus | Control.HasFocus(6130) | !String.IsEmpty(Window(Home).Property(MediaMenu)) | Window.IsActive(MyPlaylist.xml)</expression>
 	-->
 	<expression name="sidebar_visible">!String.IsEmpty(Window(Home).Property(MediaMenu)) | Window.IsActive(MyPlaylist.xml)</expression>
+	<expression name="display_sysmenu">!System.IsStandalone + !Skin.HasSetting(touchmode)</expression>
+	<expression name="display_backhomeoptions">!Window.IsActive(Home.xml) + !Skin.HasSetting(touchmode)</expression>
+	
 	<include name="CommonScrollbars">
 		<control type="group">
 			<animation effect="fade" start="100" end="0" time="150">WindowClose</animation>
@@ -685,6 +688,7 @@
 				<orientation>horizontal</orientation>
 				<width>900</width>
 				<itemgap>10</itemgap>
+				<visible>!System.IsStandalone</visible>
 				<control type="button">
 					<top>10</top>
 					<width>40</width>
@@ -693,6 +697,7 @@
 					<onclick>Minimize</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/minimize.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/minimize.png</texturenofocus>
+					<visible>!Skin.HasSetting(touchmode)</visible>
 				</control>
 				<control type="button">
 					<top>10</top>
@@ -702,6 +707,7 @@
 					<onclick>ToggleFullscreen</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/window.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/window.png</texturenofocus>
+					<visible>!Skin.HasSetting(touchmode)</visible>
 				</control>
 				<control type="button">
 					<top>10</top>
@@ -949,7 +955,7 @@
 					<onclick>Action(Back)</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/back.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/back.png</texturenofocus>
-					<visible>!Window.IsActive(Home.xml)</visible>
+					<visible>$EXP[display_backhomeoptions]</visible>
 				</control>
 				<control type="button">
 					<left>60</left>
@@ -960,7 +966,7 @@
 					<onclick>ActivateWindow(home)</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/home.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/home.png</texturenofocus>
-					<visible>!Window.IsActive(Home.xml)</visible>
+					<visible>$EXP[display_backhomeoptions]</visible>
 				</control>
 				<control type="button" id="6160">
 					<top>15</top>
@@ -972,7 +978,7 @@
 					<animation effect="fade" time="200">VisibleChange</animation>
 					<onclick>SetProperty(MediaMenu,True,Home)</onclick>
 					<onclick>SetFocus(9000)</onclick>
-					<visible>!Window.IsActive(Home.xml)</visible>
+					<visible>$EXP[display_backhomeoptions]</visible>
 				</control>
 				<control type="label" id="18900">
 					<top>50</top>
@@ -1050,7 +1056,7 @@
 						<onclick>Minimize</onclick>
 						<texturefocus colordiffuse="button_focus">icons/sysmenu/minimize.png</texturefocus>
 						<texturenofocus colordiffuse="white">icons/sysmenu/minimize.png</texturenofocus>
-						<visible>!System.IsStandalone</visible>
+						<visible>$EXP[display_sysmenu]</visible>
 					</control>
 					<control type="button">
 						<top>10</top>
@@ -1060,7 +1066,7 @@
 						<onclick>ToggleFullscreen</onclick>
 						<texturefocus colordiffuse="button_focus">icons/sysmenu/window.png</texturefocus>
 						<texturenofocus colordiffuse="white">icons/sysmenu/window.png</texturenofocus>
-						<visible>!System.IsStandalone</visible>
+						<visible>$EXP[display_sysmenu]</visible>
 					</control>
 					<control type="button">
 						<top>10</top>
@@ -1070,7 +1076,7 @@
 						<onclick>Quit</onclick>
 						<texturefocus colordiffuse="button_focus">icons/sysmenu/close.png</texturefocus>
 						<texturenofocus colordiffuse="white">icons/sysmenu/close.png</texturenofocus>
-						<visible>!System.IsStandalone</visible>
+						<visible>$EXP[display_sysmenu]</visible>
 					</control>
 					
 				</control>
@@ -1391,6 +1397,7 @@
 			<onright>2000</onright>
 			<align>justify</align>
 			<usecontrolcoords>true</usecontrolcoords>
+		<!--
 			<control type="group">
 				<width>120</width>
 				<control type="button">
@@ -1410,16 +1417,23 @@
 					<texture colordiffuse="grey">$VAR[VolumeIconVar]</texture>
 				</control>
 			</control>
+		-->
 			<include content="IconButton">
 				<param name="control_id" value="" />
-				<param name="onclick" value="ActivateWindow(favourites)" />
-				<param name="icon" value="icons/favourites.png" />
-				<param name="label" value="$LOCALIZE[10134]" />
+				<param name="onclick" value="Action(Back)" />
+				<param name="icon" value="icons/sysmenu/back.png" />
+				<param name="label" value="Back" />
+			</include>
+			<include content="IconButton">
+				<param name="control_id" value="" />
+				<param name="onclick" value="ActivateWindow(Home)" />
+				<param name="icon" value="icons/sysmenu/home.png" />
+				<param name="label" value="Back" />
 			</include>
 			<include content="IconButton">
 				<param name="control_id" value="" />
 				<param name="onclick" value="SetProperty(MediaMenu,True,Home)" />
-				<param name="icon" value="icons/settings.png" />
+				<param name="icon" value="frame/menu-nofo.png" />
 				<param name="label" value="$LOCALIZE[10004]" />
 				<param name="visible" value="Window.IsMedia" />
 			</include>
