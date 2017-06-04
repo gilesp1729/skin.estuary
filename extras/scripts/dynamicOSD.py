@@ -13,12 +13,16 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
 #      self.debugLabel = xbmcgui.ControlLabel(200, 400, 1500, 50, '')
 #      self.addControl(self.debugLabel)
       
+# These do not change - let Kodi do the scaling. 
+      screen_width = 1920
+      screen_height = (1920 * self.getHeight()) / self.getWidth()
+
 # Synthesise a progress bar out of buttons. 
 # We do this because ControlProgress does not reliably appear, and we can't interact with controls in the XML.
 # In any event we want finer grained control than the percentage gives us.
 
-      self.barY = self.getHeight() - 120
-      self.barWidth = self.getWidth()
+      self.barY = screen_height - 120
+      self.barWidth = screen_width
       self.tsProgressBg = xbmcgui.ControlButton(0, self.barY, self.barWidth, 15, ' ', noFocusTexture=grey50)
       self.addControl(self.tsProgressBg)
       self.tsProgressBg.setEnabled(False)
