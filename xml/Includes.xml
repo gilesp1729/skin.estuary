@@ -1389,60 +1389,38 @@
 			<animation effect="fade" start="100" end="0" time="300" condition="Window.Next(home)">WindowClose</animation>
 			<itemgap>0</itemgap>
 			<left>-8</left>
-			<width>480</width>
-			<height>110</height>
+			<width>640</width>
+			<height>150</height>
 			<bottom>0</bottom>
 			<onup>noop</onup>
 			<ondown>9000</ondown>
 			<onright>2000</onright>
 			<align>justify</align>
 			<usecontrolcoords>true</usecontrolcoords>
-		<!--
-			<control type="group">
-				<width>120</width>
-				<control type="button">
-					<top>0</top>
-					<width>120</width>
-					<height>120</height>
-					<label></label>
-					<onclick>ActivateWindow(1103)</onclick>
-					<texturefocus colordiffuse="button_focus">buttons/roundbutton-fo.png</texturefocus>
-					<texturenofocus />
-				</control>
-				<control type="image">
-					<left>34</left>
-					<top>34</top>
-					<width>52</width>
-					<height>52</height>
-					<texture colordiffuse="grey">$VAR[VolumeIconVar]</texture>
-				</control>
-			</control>
-		-->
-			<include content="IconButton">
+
+			<include content="TouchIconButton">
 				<param name="control_id" value="" />
 				<param name="onclick" value="Action(Back)" />
 				<param name="icon" value="icons/sysmenu/back.png" />
 				<param name="label" value="Back" />
 			</include>
-			<include content="IconButton">
+			<include content="TouchIconButton">
 				<param name="control_id" value="" />
 				<param name="onclick" value="ActivateWindow(Home)" />
 				<param name="icon" value="icons/sysmenu/home.png" />
 				<param name="label" value="Back" />
 			</include>
-			<include content="IconButton">
+			<include content="TouchIconButton">
 				<param name="control_id" value="" />
 				<param name="onclick" value="SetProperty(MediaMenu,True,Home)" />
 				<param name="icon" value="frame/menu-nofo.png" />
 				<param name="label" value="$LOCALIZE[10004]" />
-				<param name="visible" value="Window.IsMedia" />
 			</include>
-			<include content="IconButton">
+			<include content="TouchIconButton">
 				<param name="control_id" value="" />
 				<param name="onclick" value="ActivateWindow(shutdownmenu)" />
 				<param name="icon" value="icons/power.png" />
 				<param name="label" value="$LOCALIZE[33060]" />
-				<param name="visible" value="!Window.IsMedia" />
 			</include>
 		</control>
 	</include>
