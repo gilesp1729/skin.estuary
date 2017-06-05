@@ -202,6 +202,7 @@
 						<onclick>Left</onclick>
 						<texturenofocus>buttons/spinctrl/arrow-light-left.png</texturenofocus>
 						<texturefocus colordiffuse="button_focus">buttons/spinctrl/arrow-light-left.png</texturefocus>
+						<visible>!Skin.HasSetting(touchmode)</visible>
 					</control>
 					<control type="button">
 						<top>300</top>
@@ -211,6 +212,7 @@
 						<onclick>Right</onclick>
 						<texturenofocus>buttons/spinctrl/arrow-light-right.png</texturenofocus>
 						<texturefocus colordiffuse="button_focus">buttons/spinctrl/arrow-light-right.png</texturefocus>
+						<visible>!Skin.HasSetting(touchmode)</visible>
 					</control>
 					
 					<control type="button">
@@ -221,6 +223,7 @@
 						<onclick>PageUp</onclick>
 						<texturenofocus>buttons/spinctrl/arrow-light-up.png</texturenofocus>
 						<texturefocus colordiffuse="button_focus">buttons/spinctrl/arrow-light-up.png</texturefocus>
+						<visible>!Skin.HasSetting(touchmode)</visible>
 					</control>
 					<control type="button">
 						<bottom>330</bottom>
@@ -230,6 +233,7 @@
 						<onclick>PageDown</onclick>
 						<texturenofocus>buttons/spinctrl/arrow-light-down.png</texturenofocus>
 						<texturefocus colordiffuse="button_focus">buttons/spinctrl/arrow-light-down.png</texturefocus>
+						<visible>!Skin.HasSetting(touchmode)</visible>
 					</control>
 
 					
