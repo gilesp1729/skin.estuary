@@ -12,6 +12,10 @@
       <next_track>Right</next_track>
       <prev_track>Left</prev_track>
     </keyboard>
+    <appcommand>
+      <next_track>Right</next_track>
+      <prev_track>Left</prev_track>
+    </appcommand>
   </TVGuide>
   <VideoOSD>
     <!-- for some reason we need these in appcommand section for video and OSD !!?? -->
