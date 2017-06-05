@@ -650,7 +650,7 @@
 				<onclick>Action(Back)</onclick>
 				<texturefocus colordiffuse="button_focus">icons/sysmenu/back.png</texturefocus>
 				<texturenofocus colordiffuse="white">icons/sysmenu/back.png</texturenofocus>
-				<visible>!Window.IsActive(Home.xml)</visible>
+				<visible>$EXP[display_backhomeoptions]</visible>
 			</control>
 			<control type="grouplist">
 				<left>3%</left>
@@ -697,7 +697,7 @@
 					<onclick>Minimize</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/minimize.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/minimize.png</texturenofocus>
-					<visible>!Skin.HasSetting(touchmode)</visible>
+					<visible>$EXP[display_backhomeoptions]</visible>
 				</control>
 				<control type="button">
 					<top>10</top>
@@ -707,7 +707,7 @@
 					<onclick>ToggleFullscreen</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/window.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/window.png</texturenofocus>
-					<visible>!Skin.HasSetting(touchmode)</visible>
+					<visible>$EXP[display_backhomeoptions]</visible>
 				</control>
 				<control type="button">
 					<top>10</top>
@@ -717,9 +717,11 @@
 					<onclick>Quit</onclick>
 					<texturefocus colordiffuse="button_focus">icons/sysmenu/close.png</texturefocus>
 					<texturenofocus colordiffuse="white">icons/sysmenu/close.png</texturenofocus>
+					<visible>$EXP[display_backhomeoptions]</visible>
 				</control>
 
 			</control>
+			<include>TouchButtons</include>
 		</definition>
 	</include>
 	<include name="UpDownArrows">
