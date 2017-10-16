@@ -201,11 +201,22 @@
 	</variable>
 	<variable name="VideoOSDHelpTextVarLeft">
 		<value condition="Control.HasFocus(804)">$LOCALIZE[31092]</value>
+		<value condition="Control.HasFocus(641)">Rewind</value>
+		<value condition="Control.HasFocus(600)">Skip Backward</value>
+		<value condition="Control.HasFocus(602)">Play/Pause</value>
+		<value condition="Control.HasFocus(605)">Skip Forward</value>
+		<value condition="Control.HasFocus(642)">Fast Forward</value>
+		<value condition="Control.HasFocus(603)">Stop</value>
 		<value condition="Control.HasFocus(606)+ Player.Recording">$LOCALIZE[19059]</value>
 		<value condition="Control.HasFocus(606)">$LOCALIZE[264]</value>
 	</variable>
 	<variable name="VideoOSDHelpTextVarRight">
 		<value condition="Control.HasFocus(87) + [Player.Rewinding | Player.Forwarding]">$LOCALIZE[31050]</value>
+		<value condition="Control.HasFocus(881)">Volume Up</value>
+		<value condition="Control.HasFocus(882)">Volume Down</value>
+		<value condition="Control.HasFocus(883)">Mute</value>
+		<value condition="Control.HasFocus(884)">Channel Up</value>
+		<value condition="Control.HasFocus(885)">Channel Down</value>
 		<value condition="Control.HasFocus(70011)">$LOCALIZE[20060]</value>
 		<value condition="Control.HasFocus(700)">$LOCALIZE[298]</value>
 		<value condition="Control.HasFocus(703)">$LOCALIZE[31106]</value>

@@ -1,4 +1,4 @@
-﻿1.0.1
+1.0.1
 Initial version. Changes from Estuary:
 
 Home Screen and widget lists:
@@ -39,7 +39,13 @@ Video OSD:
 Partial implementation of timeshift buffer to scale using script
 
 ------------------------------------------------------------------------
+1.0.3
+Video OSD:
+Split slider into two, one to seek and the other to display PVR.Progress
+so seeks give more timely feedback.
+Add VideoOSDHelpTextVar strings for new buttons (variables.xml)
+
+------------------------------------------------------------------------
 Incomplete:
 Fix over-aggressive autoscroll in Addons/MyAddons list
-VideoOSDHelpTextVar for new buttons (variables.xml)
 Right-click option to delete recent channels from list

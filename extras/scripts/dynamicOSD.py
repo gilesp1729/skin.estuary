@@ -5,13 +5,21 @@ white50 = 'special://skin/media/colors/white50.png'
 grey50 = 'special://skin/media/colors/grey50.png'
 
 
+debug = 0
+
+
 class DynamicOSD(xbmcgui.WindowXMLDialog):
    def __init__(self, *args, **kwargs ):
       xbmcgui.WindowXMLDialog.__init__(self)
 
-# This label is just for debugging things.
-#      self.debugLabel = xbmcgui.ControlLabel(200, 400, 1500, 50, '')
-#      self.addControl(self.debugLabel)
+# These labels are just for debugging things.
+      self.debugLabel = [None for i in range(10)]
+      self.createDebugLabel(0)
+      self.createDebugLabel(1)
+      self.createDebugLabel(2)
+      self.createDebugLabel(3)
+      self.createDebugLabel(4)
+      self.createDebugLabel(5)
       
 # These do not change - let Kodi do the scaling. 
       screen_width = 1920
@@ -41,8 +49,8 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
 # Width = (TimeshiftEnd - TimeshiftStart) / Duration
 # (clamped and scaled appropriately into pixels)
 #
-
    def calcProgress(self):
+      self.debugRawData()
       duration = self.translate_hhmm(xbmc.getInfoLabel('Player.Duration(hh:mm)'))
 
 # Player.StartTime can be unreliable if starting chanel from bootup.
@@ -50,20 +58,20 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
 #      startTime = self.translate_hhmm(xbmc.getInfoLabel('Player.StartTime'))
       finish_time = self.translate_hhmm(xbmc.getInfoLabel('Player.FinishTime'))
       startTime = self.subtract_times(finish_time, duration)
-
       tsStart = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftStart'))
       tsEnd = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftEnd'))
       
 # Take care of tsStart before the start of the current program
       tsDuration = min(self.subtract_times(tsEnd, tsStart), self.subtract_times(tsEnd, startTime))
       self.progWidth = (tsDuration * self.barWidth) / duration
-
+      self.setLabel(3, str(startTime) + " for " + str(duration))
+      self.setLabel(4, "TS: " + str(tsStart) + " to " + str(tsEnd) + " for " + str(tsDuration))
+      
 # Watch out for 12/24 hours added to the difference if tsStart earlier than startTime
       tsStart = self.subtract_times(tsStart, startTime)
       if tsStart > tsEnd:
          tsStart = 0
       self.progX = (tsStart * self.barWidth) / duration
-
       
 # Update the width and position of the progress bar. Setting a button to a zero width seems
 # to produce strange results, so in this case just hide the thing.
@@ -75,10 +83,16 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
          self.tsProgress.setVisible(False)
       else:
          self.tsProgress.setWidth(self.progWidth)
-# Translate hh:mm into a time in minutes. Ignore any AM/PM in the string.
+         
+# Translate hh:mm into a time in minutes since the previous midnight. 
+# hh:mm may be 24-hour or 12-hour with AM/PM.
    def translate_hhmm(self, hhmm):
       colon = hhmm.find(':')
-      return int(hhmm[0:colon]) * 60 + int(hhmm[colon+1:colon+3])
+      minutes = int(hhmm[0:colon]) * 60 + int(hhmm[colon+1:colon+3])
+      pm = hhmm.find('PM')
+      if pm > 0:
+         minutes = minutes + 12 * 60
+      return minutes
       
 # Subtract two times. If the result is negative, add 12 or 24 depending on what
 # clock format we appear to be using. This relies on the fact that TV programs 
@@ -95,6 +109,22 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
             diff = diff + 12 * 60
       return diff
 
+# Create a debug label.
+   def createDebugLabel(self, i):
+      if debug:
+         self.debugLabel[i] = xbmcgui.ControlLabel(100, 200 + 50 * i, 1500, 50, '')
+         self.addControl(self.debugLabel[i])
+      
+   def setLabel(self, i, text):
+      if debug:
+         self.debugLabel[i].setLabel(text)
+
+   def debugRawData(self):
+      if debug:
+         self.setLabel(0, xbmc.getInfoLabel('Player.Title'))
+         self.setLabel(1, xbmc.getInfoLabel('Player.StartTime(hh:mm:ss xx)') + " to " + xbmc.getInfoLabel('Player.FinishTime(hh:mm:ss xx)') + " for " + xbmc.getInfoLabel('Player.Duration(hh:mm:ss)'))
+         self.setLabel(2, "TS: " + xbmc.getInfoLabel('PVR.TimeshiftStart(hh:mm:ss xx)') + " to " + xbmc.getInfoLabel('PVR.TimeshiftEnd(hh:mm:ss xx)') + " cur: " + xbmc.getInfoLabel('PVR.TimeshiftCur(hh:mm:ss xx)') + " system: " + xbmc.getInfoLabel('System.Time(hh:mm:ss xx)'))
+   
 # ------------------------------------------------------------------------------------
 # Display the window. It will be taken down when the OSD unloads,
 

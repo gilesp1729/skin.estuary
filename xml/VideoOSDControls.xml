@@ -307,7 +307,33 @@
 					<onleft>StepBack</onleft>
 					<onclick condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onclick>
 				</control>
+
 				<control type="slider">
+					<top>-5</top>
+					<left>0</left>
+					<width>100%</width>
+					<height>25</height>
+					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
+					<textureslidernib>buttons/slider-nib.png</textureslidernib>
+					<textureslidernibfocus>buttons/slider-nib.png</textureslidernibfocus>
+					<info>PVR.Progress</info>
+					<action></action>
+					<visible>VideoPlayer.Content(LiveTV) + ![Control.HasFocus(888) | Control.HasFocus(87)]</visible>
+				</control>
+				<control type="slider">
+					<top>-5</top>
+					<left>0</left>
+					<width>100%</width>
+					<height>25</height>
+					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
+					<textureslidernib colordiffuse="button_focus">buttons/slider-nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
+					<info>PVR.Progress</info>
+					<action></action>
+					<visible>VideoPlayer.Content(LiveTV) + [Control.HasFocus(888) | Control.HasFocus(87)]</visible>
+				</control>
+
+				<control type="slider" id="888">
 					<top>-5</top>
 					<left>0</left>
 					<width>100%</width>
@@ -317,19 +343,6 @@
 					<textureslidernibfocus></textureslidernibfocus>
 					<info>Player.Progress</info>
 					<action>seek</action>
-					<visible>!Control.HasFocus(87)</visible>
-				</control>
-				<control type="slider">
-					<top>-5</top>
-					<left>0</left>
-					<width>100%</width>
-					<height>25</height>
-					<texturesliderbar></texturesliderbar>
-					<textureslidernib></textureslidernib>
-					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
-					<info>Player.Progress</info>
-					<action>seek</action>
-					<visible>Control.HasFocus(87)</visible>
 				</control>
 			</control>
 		</control>
