@@ -46,6 +46,12 @@ so seeks give more timely feedback.
 Add VideoOSDHelpTextVar strings for new buttons (variables.xml)
 
 ------------------------------------------------------------------------
+1.0.4
+Home Screen and widget lists:
+Shrink up TV channel widgets so 2 rows can be displayed without
+a scroll bar appearing. (recent shows and recordings)
+
+------------------------------------------------------------------------
 Incomplete:
 Fix over-aggressive autoscroll in Addons/MyAddons list
 Right-click option to delete recent channels from list
