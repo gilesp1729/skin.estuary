@@ -51,6 +51,10 @@ Home Screen and widget lists:
 Shrink up TV channel widgets so 2 rows can be displayed without
 a scroll bar appearing. (recent shows and recordings)
 
+Video OSD:
+Prevent stray mouse clicks from closing script window but leaving the
+OSD up. Block right clicks in script similarly. Tidy up help tips.
+
 ------------------------------------------------------------------------
 Incomplete:
 Fix over-aggressive autoscroll in Addons/MyAddons list

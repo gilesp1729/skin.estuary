@@ -233,7 +233,7 @@
 						<include content="OSDButton">
 							<param name="texture" value="osd/fullscreen/buttons/information.png"/>
 						</include>
-						<onclick>Action(Close)</onclick>
+						<onclick>Dialog.Close(VideoOSD)</onclick>
 						<onclick>ActivateWindow(fullscreeninfo)</onclick>
 					</control>
 				<!--

@@ -1,6 +1,10 @@
 import xbmc
 import xbmcgui
 
+ACTION_MOUSE_RIGHT_CLICK = 101
+ACTION_PREVIOUS_MENU = 10
+ACTION_NAV_BACK = 92
+
 white50 = 'special://skin/media/colors/white50.png'
 grey50 = 'special://skin/media/colors/grey50.png'
 
@@ -130,7 +134,18 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
          self.setLabel(0, xbmc.getInfoLabel('Player.Title'))
          self.setLabel(1, xbmc.getInfoLabel('Player.StartTime(hh:mm:ss xx)') + " to " + xbmc.getInfoLabel('Player.FinishTime(hh:mm:ss xx)') + " for " + xbmc.getInfoLabel('Player.Duration(hh:mm:ss)'))
          self.setLabel(2, "TS: " + xbmc.getInfoLabel('PVR.TimeshiftStart(hh:mm:ss xx)') + " to " + xbmc.getInfoLabel('PVR.TimeshiftEnd(hh:mm:ss xx)') + " cur: " + xbmc.getInfoLabel('PVR.TimeshiftCur(hh:mm:ss xx)') + " system: " + xbmc.getInfoLabel('System.Time(hh:mm:ss xx)'))
-   
+
+# Action handler for right click, since we can't do it in a keymap.
+# Prevent it from leaving the OSD up while the script goes away...
+   def onAction(self, act):
+      self.setLabel(3, str(act.getId()))
+      if act.getId() == ACTION_MOUSE_RIGHT_CLICK:
+         xbmc.executebuiltin("Dialog.Close(VideoOSD)")
+      elif act.getId() == ACTION_PREVIOUS_MENU:
+         self.close()
+      elif act.getId() == ACTION_NAV_BACK:
+         self.close()
+         
 # ------------------------------------------------------------------------------------
 # Display the window. It will be taken down when the OSD unloads,
 
