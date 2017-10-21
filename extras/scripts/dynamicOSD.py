@@ -66,7 +66,13 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
       self.progWidth = (tsDuration * self.barWidth) / duration
       self.setLabel(3, str(startTime) + " for " + str(duration))
       self.setLabel(4, "TS: " + str(tsStart) + " to " + str(tsEnd) + " for " + str(tsDuration))
-      
+
+# Take care of TVH bug where tsEnd is cut off when buffer runs out
+# (rather than correctly advancing tsStart)
+# Do this by using the current time for tsEnd and subtracting tsDuration to get tsStart
+      tsEnd = self.translate_hhmm(xbmc.getInfoLabel('System.Time'))
+      tsStart = self.subtract_times(tsEnd, tsDuration)
+
 # Watch out for 12/24 hours added to the difference if tsStart earlier than startTime
       tsStart = self.subtract_times(tsStart, startTime)
       if tsStart > tsEnd:
