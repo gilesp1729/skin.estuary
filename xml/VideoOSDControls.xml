@@ -6,6 +6,7 @@
 	<!-- <defaultcontrol always="true">602</defaultcontrol> -->
 	<include>Animation_BottomSlide</include>
 	<controls>
+		<!--
 		<control type="button">
 			<description>background close area</description>
 			<left>0</left>
@@ -16,6 +17,7 @@
 			<texturenofocus />
 			<onclick>Action(close)</onclick>
 		</control>
+		-->
 
 		<!-- Can't put these in the top bar overlay, for some reason they don't pick up the focus -->
 		<!-- And no, it's not the button above. -->
@@ -72,8 +74,9 @@
 				<aligny>center</aligny>
 				<width>1000</width>
 				<height>60</height>
+				<shadowcolor>osdfade</shadowcolor>
 				<label>$VAR[VideoOSDHelpTextVarLeft]</label>
-				<visible>!Player.ShowInfo + !PVR.IsTimeShift</visible>
+				<visible>!Player.ShowInfo</visible>
 			</control>
 			<control type="label">
 				<right>30</right>
@@ -83,8 +86,9 @@
 				<aligny>center</aligny>
 				<width>1000</width>
 				<height>60</height>
+				<shadowcolor>osdfade</shadowcolor>
 				<label>$VAR[VideoOSDHelpTextVarRight]</label>
-				<visible>!Player.ShowInfo + !PVR.IsTimeShift</visible>
+				<visible>!Player.ShowInfo</visible>
 			</control>
 			<control type="group" id="200">
 				<control type="grouplist" id="201">

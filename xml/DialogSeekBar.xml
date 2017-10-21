@@ -115,7 +115,8 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<font>font30</font>
-					<label>[B]$LOCALIZE[31026][/B] $INFO[PVR.timeshiftcur] ($INFO[PVR.TimeShiftStart] - $INFO[PVR.TimeShiftEnd])</label>
+					<shadowcolor>osdfade</shadowcolor>
+					<label>[B]$LOCALIZE[31026][/B] $INFO[PVR.timeshiftcur]</label>
 				</control>
 			</control>
 			<control type="group">
