@@ -1,5 +1,5 @@
 # skin.mousetuary
-**** DO NOT clone the master branch. All development is being done in the "keypton" branch ****
+**** DO NOT clone the master branch. All development is being done in the "krypton" or "leia" branches ****
 
 Mousetuary is a Kodi skin, derived from the Kodi default skin "Estuary"
 
