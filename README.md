@@ -1,6 +1,6 @@
 # skin.mousetuary
 Mousetuary is a Kodi skin, derived from the Kodi default skin "Estuary" (at 1.9.11 on the krypton branch of phil65/skin.estuary)
-This is the "krypton" branch.
+This is the "leia" branch.
 
 The aims of Mousetuary are: 
 - to cater to PVR users better (little else has changed from Estuary, apart from mouse controls)
