@@ -55,12 +55,17 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
 #
    def calcProgress(self):
       self.debugRawData()
-      duration = self.translate_hhmm(xbmc.getInfoLabel('Player.Duration(hh:mm)'))
 
-# Player.StartTime can be unreliable if starting chanel from bootup.
+# v18 get duration and finish time from the right infolabels      
+      if xbmc.getCondVisibility('VideoPlayer.HasEpg'):
+         duration = self.translate_hhmm(xbmc.getInfoLabel('PVR.EpgEventDuration(hh:mm)'))
+         finish_time = self.translate_hhmm(xbmc.getInfoLabel('PVR.EpgEventFinishTime'))
+      else:
+         duration = self.translate_hhmm(xbmc.getInfoLabel('Player.Duration(hh:mm)'))
+         finish_time = self.translate_hhmm(xbmc.getInfoLabel('Player.FinishTime'))
+
+# Player.StartTime can be unreliable if starting channel from bootup.
 # Calculate it from FinishTime - Duration.
-#      startTime = self.translate_hhmm(xbmc.getInfoLabel('Player.StartTime'))
-      finish_time = self.translate_hhmm(xbmc.getInfoLabel('Player.FinishTime'))
       startTime = self.subtract_times(finish_time, duration)
       tsStart = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftStart'))
       tsEnd = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftEnd'))
@@ -132,7 +137,10 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
    def debugRawData(self):
       if debug:
          self.setLabel(0, xbmc.getInfoLabel('Player.Title'))
-         self.setLabel(1, xbmc.getInfoLabel('Player.StartTime(hh:mm:ss xx)') + " to " + xbmc.getInfoLabel('Player.FinishTime(hh:mm:ss xx)') + " for " + xbmc.getInfoLabel('Player.Duration(hh:mm:ss)'))
+         if xbmc.getCondVisibility('VideoPlayer.HasEpg'):
+            self.setLabel(1, "EPG: ending " + xbmc.getInfoLabel('PVR.EpgEventFinishTime(hh:mm:ss xx)') + " for " + xbmc.getInfoLabel('PVR.EpgEventDuration(hh:mm:ss)'))
+         else:
+            self.setLabel(1, "Player: " + xbmc.getInfoLabel('Player.StartTime(hh:mm:ss xx)') + " to " + xbmc.getInfoLabel('Player.FinishTime(hh:mm:ss xx)') + " for " + xbmc.getInfoLabel('Player.Duration(hh:mm:ss)'))
          self.setLabel(2, "TS: " + xbmc.getInfoLabel('PVR.TimeshiftStart(hh:mm:ss xx)') + " to " + xbmc.getInfoLabel('PVR.TimeshiftEnd(hh:mm:ss xx)') + " cur: " + xbmc.getInfoLabel('PVR.TimeshiftCur(hh:mm:ss xx)') + " system: " + xbmc.getInfoLabel('System.Time(hh:mm:ss xx)'))
 
 # Action handler for right click, since we can't do it in a keymap.

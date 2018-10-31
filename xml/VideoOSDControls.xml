@@ -64,7 +64,7 @@
 		<control type="group">
 			<bottom>0</bottom>
 			<height>180</height>
-			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(fullscreeninfo) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(osdvideosettings) | Window.IsVisible(OSDAudioDSPSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(playerprocessinfo) | Window.IsVisible(osdcmssettings) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
+			<visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(fullscreeninfo) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(osdvideosettings) | Window.IsVisible(OSDAudioDSPSettings) | Window.IsVisible(VideoBookmarks) | Window.IsVisible(playerprocessinfo) | Window.IsVisible(osdcmssettings) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVRChannelGuide)]</visible>
 			<animation effect="fade" time="200">VisibleChange</animation>
 			<control type="label">
 				<left>30</left>
@@ -320,7 +320,7 @@
 					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
 					<textureslidernib>buttons/slider-nib.png</textureslidernib>
 					<textureslidernibfocus>buttons/slider-nib.png</textureslidernibfocus>
-					<info>PVR.Progress</info>
+					<info>PVR.EpgEventProgress</info>
 					<action></action>
 					<visible>VideoPlayer.Content(LiveTV) + ![Control.HasFocus(888) | Control.HasFocus(87)]</visible>
 				</control>
@@ -332,7 +332,7 @@
 					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
 					<textureslidernib colordiffuse="button_focus">buttons/slider-nib.png</textureslidernib>
 					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
-					<info>PVR.Progress</info>
+					<info>PVR.EpgEventProgress</info>
 					<action></action>
 					<visible>VideoPlayer.Content(LiveTV) + [Control.HasFocus(888) | Control.HasFocus(87)]</visible>
 				</control>
@@ -345,7 +345,7 @@
 					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
 					<textureslidernib></textureslidernib>
 					<textureslidernibfocus></textureslidernibfocus>
-					<info>Player.Progress</info>
+					<info>PVR.EpgEventProgress</info>
 					<action>seek</action>
 				</control>
 			</control>
