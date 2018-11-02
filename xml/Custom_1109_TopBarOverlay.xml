@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1109">
 	<visible>Window.IsActive(fullscreenvideo) | Window.IsActive(visualisation)</visible>
-	<visible>Window.IsActive(seekbar) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrosdguide)</visible>
+	<visible>Window.IsActive(seekbar) |Window.IsActive(musicosd) | Window.IsActive(pvrosdchannels) | Window.IsActive(pvrchannelguide)</visible>
 	<depth>DepthOSD</depth>
 	<include>Animation_TopSlide</include>
 	<zorder>0</zorder>
@@ -25,8 +25,7 @@
 				<aspectratio aligny="top" align="left">keep</aspectratio>
 			</control>
 			<control type="group">
-				<visible>!Window.IsActive(pvrosdchannels) + !Window.IsActive(pvrosdguide)</visible>
-				<visible>IsEmpty(Player.Art(clearlogo))</visible>
+				<visible>!Window.IsActive(pvrosdchannels) + !Window.IsActive(pvrchannelguide)</visible>
 				<animation effect="fade" time="150">VisibleChange</animation>
 				<left>30</left>
 				<right>400</right>
@@ -77,7 +76,16 @@
 						<width>auto</width>
 						<visible>!String.isempty(Player.Duration)</visible>
 						<visible>Player.HasVideo</visible>
-						<visible>!VideoPlayer.Content(LiveTV) | VideoPlayer.HasEpg</visible>
+						<visible>!VideoPlayer.Content(LiveTV)</visible>
+					</control>
+					<control type="label">
+						<label>$INFO[PVR.EpgEventFinishTime,$LOCALIZE[31080]: ]</label>
+						<shadowcolor>text_shadow</shadowcolor>
+						<height>100</height>
+						<width>auto</width>
+						<visible>!String.isempty(Player.Duration)</visible>
+						<visible>Player.HasVideo</visible>
+						<visible>VideoPlayer.Content(LiveTV)</visible>
 					</control>
 					<control type="image">
 						<top>2</top>
