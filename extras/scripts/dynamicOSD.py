@@ -71,8 +71,11 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
       tsEnd = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftEnd'))
       
 # Take care of tsStart before the start of the current program
+# Protect division by zero (some DVD lead-in tracks come up with zero duration)
       tsDuration = min(self.subtract_times(tsEnd, tsStart), self.subtract_times(tsEnd, startTime))
-      self.progWidth = (tsDuration * self.barWidth) / duration
+      self.progWidth = 0
+      if duration > 0:
+         self.progWidth = (tsDuration * self.barWidth) / duration
       self.setLabel(3, str(startTime) + " for " + str(duration))
       self.setLabel(4, "TS: " + str(tsStart) + " to " + str(tsEnd) + " for " + str(tsDuration))
 
@@ -86,7 +89,11 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
       tsStart = self.subtract_times(tsStart, startTime)
       if tsStart > tsEnd:
          tsStart = 0
-      self.progX = (tsStart * self.barWidth) / duration
+         
+# Protect division by zero (some DVD lead-in tracks come up with zero duration)
+      self.progX = 0
+      if duration > 0:
+         self.progX = (tsStart * self.barWidth) / duration
       
 # Update the width and position of the progress bar. Setting a button to a zero width seems
 # to produce strange results, so in this case just hide the thing.
