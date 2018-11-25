@@ -268,7 +268,7 @@
 				<onup>8010</onup>
 				<ondown>650</ondown>
 				<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-nib.png</texturesliderbar>
-				<textureslidernib colordiffuse="button_focus">buttons/slider-nib.pngg</textureslidernib>
+				<textureslidernib colordiffuse="button_focus">buttons/slider-nib.png</textureslidernib>
 				<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
 				<info>Player.Progress</info>
 				<visible>Player.SeekEnabled</visible>
