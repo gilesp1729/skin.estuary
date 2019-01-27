@@ -9,3 +9,5 @@ The aims of Mousetuary are:
 
 There is an optional keymap to allow WMC-like scrolling in the EPG, and guide selection from live TV with ctrl-g. After installation, move wmc-keymap.xml and guidekey.py into the userdata/keymaps folder. (the rules for skins won't allow keymaps to be automatically installed)
 
+Note on versioning: addon.xml references xbmc.gui version 14, for Leia RC5 and preumably the released version. Betas and RC's up to 4 require version 13.
+
