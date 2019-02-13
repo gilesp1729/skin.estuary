@@ -5,6 +5,7 @@
 	<!-- <defaultcontrol always="true">602</defaultcontrol> -->
 	<depth>DepthOSD</depth>
 	<controls>
+		<!--
 		<control type="button">
 			<description>background close area</description>
 			<left>0</left>
@@ -15,6 +16,7 @@
 			<texturenofocus />
 			<onclick>Action(close)</onclick>
 		</control>
+		-->
 		
 		<!-- Can't put these in the top bar overlay, for some reason they don't pick up the focus -->
 		<!-- And no, it's not the button above. -->
@@ -268,7 +270,7 @@
 				<onup>8010</onup>
 				<ondown>650</ondown>
 				<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-nib.png</texturesliderbar>
-				<textureslidernib colordiffuse="button_focus">buttons/slider-nib.pngg</textureslidernib>
+				<textureslidernib colordiffuse="button_focus">buttons/slider-nib.png</textureslidernib>
 				<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
 				<info>Player.Progress</info>
 				<visible>Player.SeekEnabled</visible>
