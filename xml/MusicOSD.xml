@@ -5,6 +5,7 @@
 	<!-- <defaultcontrol always="true">602</defaultcontrol> -->
 	<depth>DepthOSD</depth>
 	<controls>
+		<!--
 		<control type="button">
 			<description>background close area</description>
 			<left>0</left>
@@ -15,6 +16,7 @@
 			<texturenofocus />
 			<onclick>Action(close)</onclick>
 		</control>
+		-->
 		
 		<!-- Can't put these in the top bar overlay, for some reason they don't pick up the focus -->
 		<!-- And no, it's not the button above. -->
@@ -82,7 +84,7 @@
 				<onup>87</onup>
 				<ondown>noop</ondown>
 				<onleft>5000</onleft>
-				<onright>620</onright>
+				<onright>881</onright>
 				<control type="radiobutton" id="641">
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/rewind.png"/>
@@ -146,6 +148,24 @@
 				<ondown>noop</ondown>
 				<onleft>603</onleft>
 				<onright>641</onright>
+				<control type="radiobutton" id="881">
+					<include content="OSDButton">
+						<param name="texture" value="dialogs/volume/volume.png"/>
+					</include>
+					<onclick>Action(VolumeUp)</onclick>
+				</control>
+				<control type="radiobutton" id="882">
+					<include content="OSDButton">
+						<param name="texture" value="dialogs/volume/volume1.png"/>
+					</include>
+					<onclick>Action(VolumeDown)</onclick>
+				</control>
+				<control type="radiobutton" id="883">
+					<include content="OSDButton">
+						<param name="texture" value="dialogs/volume/volume-mute.png"/>
+					</include>
+					<onclick>Action(Mute)</onclick>
+				</control>
 				<control type="radiobutton" id="620">
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/rating.png"/>
@@ -201,6 +221,7 @@
 					<visible>!MusicPlayer.Content(LiveTV)</visible>
 					<onclick>PlayerControl(Random)</onclick>
 				</control>
+				<!--
 				<control type="radiobutton" id="703">
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/settings-subtitle.png"/>
@@ -211,12 +232,30 @@
 					<onclick condition="String.IsEmpty(Skin.String(LyricScript_Path))">Close</onclick>
 					<onclick condition="String.IsEmpty(Skin.String(LyricScript_Path))">RunScript($INFO[Skin.String(LyricScript_Path)])</onclick>
 				</control>
+				-->
+				<control type="radiobutton" id="703">
+					<include content="OSDButton">
+						<param name="texture" value="icons/pvr/epg.png"/>
+					</include>
+					<onclick>Close</onclick>
+					<onclick>ActivateWindow(musicplaylist)</onclick>
+				</control>
 				<control type="radiobutton" id="5000">
 					<include content="OSDButton">
 						<param name="texture" value="osd/fullscreen/buttons/settings.png"/>
 					</include>
 					<onclick>ActivateWindow(1105)</onclick>
 				</control>
+			</control>
+			<control type="label">
+				<left>30</left>
+				<top>-60</top>
+				<textoffsetx>20</textoffsetx>
+				<aligny>center</aligny>
+				<align>leftt</align>
+				<width>1858</width>
+				<height>60</height>
+				<label>$VAR[MusicOSDHelpTextVarLeft]</label>
 			</control>
 			<control type="label">
 				<right>30</right>
@@ -226,7 +265,7 @@
 				<align>right</align>
 				<width>1858</width>
 				<height>60</height>
-				<label>$VAR[MusicOSDHelpTextVar]</label>
+				<label>$VAR[MusicOSDHelpTextVarRight]</label>
 			</control>
 		</control>
 		<control type="group">
