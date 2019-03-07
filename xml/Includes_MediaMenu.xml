@@ -323,6 +323,66 @@
 			</control>
 		</definition>
 	</include>
+	<include name="MediaProgressNowPlaying">
+        <param name="left">5</param>
+		<definition>
+			<control type="group">
+				<animation effect="fade" start="0" end="100" time="400">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<animation effect="fade" time="300">VisibleChange</animation>
+				<height>50</height>
+				<left>$PARAM[left]</left>
+				<width>450</width>
+				<visible>Player.HasMedia + [$EXP[sidebar_visible]]</visible>
+				<visible>!System.HasModalDialog</visible>
+				<control type="button" id="87">
+					<include>HiddenObject</include>
+					<onup condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onup>
+					<ondown condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</ondown>
+					<onright condition="!Player.Forwarding32x">PlayerControl(Forward)</onright>
+					<onleft condition="!Player.Rewinding32x">PlayerControl(Rewind)</onleft>
+					<visible>Player.SeekEnabled</visible>
+					<onclick condition="Player.Forwarding | Player.Rewinding">PlayerControl(Play)</onclick>
+				</control>
+				<control type="progress">
+					<left>0</left>
+					<top>30</top>
+					<width>100%</width>
+					<height>15</height>
+					<info>Player.Progress</info>
+					<texturebg border="3" colordiffuse="60FFFFFF">colors/white50.png</texturebg>
+					<midtexture colordiffuse="button_focus">colors/white.png</midtexture>
+				</control>
+				<control type="slider">
+					<left>0</left>
+					<top>25</top>
+					<width>100%</width>
+					<height>25</height>
+					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-nib.png</texturesliderbar>
+					<textureslidernib>buttons/slider-nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
+					<info>Player.Progress</info>
+					<visible>Player.SeekEnabled</visible>
+					<action>seek</action>
+					<visible>!Control.HasFocus(87)</visible>
+				</control>
+				<control type="slider">
+					<left>0</left>
+					<top>25</top>
+					<width>100%</width>
+					<height>25</height>
+					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-nib.png</texturesliderbar>
+					<textureslidernib colordiffuse="button_focus">buttons/slider-nib.png</textureslidernib>
+					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
+					<info>Player.Progress</info>
+					<visible>Player.SeekEnabled</visible>
+					<action>seek</action>
+					<visible>Control.HasFocus(87)</visible>
+				</control>
+			</control>
+		</definition>
+	</include>
+	
 	<include name="MediaMenuListCommon">
 		<definition>
 			<left>0</left>

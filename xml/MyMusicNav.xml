@@ -75,6 +75,7 @@
 						<onclick condition="!System.HasAddon(plugin.library.node.editor)">InstallAddon(plugin.library.node.editor)</onclick>
 						<visible>String.IsEmpty(Container.FolderPath) + String.IsEmpty(Container.PluginName)</visible>
 					</control>
+					<include>MediaProgressNowPlaying</include>
 					<include>MediaMenuNowPlaying</include>
 				</control>
 			</control>
