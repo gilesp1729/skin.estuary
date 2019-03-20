@@ -207,7 +207,7 @@
 		<value condition="Control.HasFocus(605)">Skip Forward</value>
 		<value condition="Control.HasFocus(642)">Fast Forward</value>
 		<value condition="Control.HasFocus(603)">Stop</value>
-		<value condition="Control.HasFocus(606)+ Player.Recording">$LOCALIZE[19059]</value>
+		<value condition="Control.HasFocus(606)+ PVR.IsRecordingPlayingChannel">$LOCALIZE[19059]</value>
 		<value condition="Control.HasFocus(606)">$LOCALIZE[264]</value>
 	</variable>
 	<variable name="VideoOSDHelpTextVarRight">
