@@ -346,7 +346,7 @@
 					<textureslidernib></textureslidernib>
 					<textureslidernibfocus></textureslidernibfocus>
 					<info>PVR.EpgEventProgress</info>
-					<action>seek</action>
+					<action>pvr.seek</action>
 				</control>
 			</control>
 		</control>
