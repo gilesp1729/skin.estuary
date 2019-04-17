@@ -56,23 +56,17 @@ class DynamicOSD(xbmcgui.WindowXMLDialog):
    def calcProgress(self):
       self.debugRawData()
 
+      tsStart = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftStart'))
+      tsEnd = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftEnd'))
+
 # v18 get duration and finish time from the right infolabels      
       if xbmc.getCondVisibility('VideoPlayer.HasEpg'):
          duration = self.translate_hhmm(xbmc.getInfoLabel('PVR.EpgEventDuration(hh:mm)'))
-         finish_time = self.translate_hhmm(xbmc.getInfoLabel('PVR.EpgEventFinishTime'))
+         finish_time = self.translate_hhmm(xbmc.getInfoLabel('Videoplayer.EndTime'))
       else:
          duration = self.translate_hhmm(xbmc.getInfoLabel('Player.Duration(hh:mm)'))
          finish_time = self.translate_hhmm(xbmc.getInfoLabel('Player.FinishTime'))
          
-      tsStart = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftStart'))
-      tsEnd = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftEnd'))
-
-# v18 finish time seems to be affected by the timeshift position!
-# correct for it so the finish time is accurate
-      ts_correct = self.translate_hhmm(xbmc.getInfoLabel('PVR.TimeshiftCur'))
-      ts_correct = self.subtract_times(tsEnd, ts_correct)
-      finish_time = self.subtract_times(finish_time, ts_correct)
-
 # Player.StartTime can be unreliable if starting channel from bootup.
 # Calculate it from FinishTime - Duration.
       startTime = self.subtract_times(finish_time, duration)

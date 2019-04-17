@@ -322,7 +322,7 @@
 					<textureslidernibfocus>buttons/slider-nib.png</textureslidernibfocus>
 					<info>PVR.EpgEventProgress</info>
 					<action></action>
-					<visible>VideoPlayer.Content(LiveTV) + ![Control.HasFocus(888) | Control.HasFocus(87)]</visible>
+					<visible>VideoPlayer.Content(LiveTV) + ![Control.HasFocus(888) | Control.HasFocus(889) | Control.HasFocus(87)]</visible>
 				</control>
 				<control type="slider">
 					<top>-5</top>
@@ -334,7 +334,7 @@
 					<textureslidernibfocus colordiffuse="button_focus">buttons/slider-nib.png</textureslidernibfocus>
 					<info>PVR.EpgEventProgress</info>
 					<action></action>
-					<visible>VideoPlayer.Content(LiveTV) + [Control.HasFocus(888) | Control.HasFocus(87)]</visible>
+					<visible>VideoPlayer.Content(LiveTV) + [Control.HasFocus(888) | Control.HasFocus(889) | Control.HasFocus(87)]</visible>
 				</control>
 
 				<control type="slider" id="888">
@@ -347,6 +347,19 @@
 					<textureslidernibfocus></textureslidernibfocus>
 					<info>PVR.EpgEventProgress</info>
 					<action>pvr.seek</action>
+					<visible>VideoPlayer.Content(LiveTV)</visible>
+				</control>
+				<control type="slider" id="889">
+					<top>-5</top>
+					<left>0</left>
+					<width>100%</width>
+					<height>25</height>
+					<texturesliderbar colordiffuse="00FFFFFF">buttons/slider-back.png</texturesliderbar>
+					<textureslidernib></textureslidernib>
+					<textureslidernibfocus></textureslidernibfocus>
+					<info>PVR.EpgEventProgress</info>
+					<action>seek</action>
+					<visible>!VideoPlayer.Content(LiveTV)</visible>
 				</control>
 			</control>
 		</control>
